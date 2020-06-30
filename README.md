@@ -30,12 +30,12 @@ _More detailed instructions and/or improvements coming soon._
 *You can optionally turn these checkboxes into issues on your new repository.*
 
 - [ ] Turn on GitHub pages under `Settings`.
-- [ ] _Optional:_ Delete or alter the issue templates (`.github/ISSUE_TEMPLATE`); the ones that will be included are tailored for the template repository.
-- [ ] Delete the irrelevant `*-workshop` folder. 
+- [x] _Optional:_ Delete or alter the issue templates (`.github/ISSUE_TEMPLATE`); the ones that will be included are tailored for the template repository.
+- [x] Delete the irrelevant `*-workshop` folder. 
 If your workshop is a virtual workshop, remove the `in-person-workshop` folder. 
 If your workshop is an in-person workshop, remove the `virtual-workshop` folder.
 	- If you're running an in-person workshop, you will not need the `virtual-setup` folder, either.
-- [ ] Rename the relevant `*-workshop` folder to `workshop`. 
+- [x] Rename the relevant `*-workshop` folder to `workshop`. 
 For a virtual workshop, `virtual-workshop` should be renamed to `workshop`.
 Changing this folder name will make several links in the repository work–there are instances where we link to a schedule with `../workshop/SCHEDULE.md`, for example.
 - [ ] Add PDF copies of your slides to `slides`.
