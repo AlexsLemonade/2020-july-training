@@ -33,7 +33,6 @@ header_pages:
   # as described at https://github.com/AlexsLemonade/training-specific-template#customizing-the-new-repository-for-an-individual-training-workshop
   - workshop/SCHEDULE.md
   - workshop/workshop-structure.md
-  - workshop/workshop-materials.md
 author: Childhood Cancer Data Lab
 email: training@ccdatalab.org
 twitter_username: CancerDataLab
