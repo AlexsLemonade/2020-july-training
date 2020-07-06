@@ -1,5 +1,6 @@
 ---
-title: CCDL Virtual Training
+title: 2020 July CCDL Virtual Training
+permalink: /
 ---
 
 ## {{site.training_title}}
