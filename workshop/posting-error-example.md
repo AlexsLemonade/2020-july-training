@@ -6,10 +6,10 @@ title: Posting a error to Slack
 <p>We use the <b>Cancer Data Science Slack</b> for communication.
 If you haven't yet joined Cancer Data Science Slack, you will need to follow the [set up procedures described here](../virtual-setup/slack-procedures.md).
 
-During and after the workshop, we encourage you to post your coding questions to your Slack training channel!
+During and after the workshop, we encourage you to post your coding questions to your Slack training channel.
 But, asking questions about code in such a way that others can readily help you can be tricky and is a skill itself!
 
-Here we've laid out some guidelines for posting your question so that your peers and the CCDL team will more readily be able to help you reach a solution!
+Here we've laid out some guidelines for posting your question so that your peers and the CCDL team will more readily be able to help you reach a solution.
 Following these guidelines will take more time but it will increase your chances of getting speedier responses that more adequately help you resolve your error!
 
 **Overall your posted code question should include:**
@@ -69,15 +69,15 @@ Here's how each of the "four points" (and the optional one) could be included in
 
 - Providing context around your end goals for this code will help others tailor their advice toward your goal as well as helping the understand what you are working toward.
 
-<img src = "screenshots/what-is-the-goal.png">
+<img src = "screenshots/what-is-the-goal.png" width = "600">
 
 ### What is the code that is producing this error?:
 
-- You should [use backticks to format your code.](#adding-code-blocks-to-messages)
+- You should [use backticks to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages)
 - Screenshots make it so people can't copy-paste your code to try it themselves so pasting the code wiith backticks makes it easiest for others to help you.
 
 *For our example:*
-<img src = "screenshots/what-is-the-code.png">
+<img src = "screenshots/what-is-the-code.png" width = "600">
 
 ### What is <ins>the error</ins> or problematic outcome?:  
 
@@ -86,7 +86,7 @@ Here's how each of the "four points" (and the optional one) could be included in
      - *Example*: "This data.frame I'm showing in my code, called `cool_df` doesn't have row names when I look at it in my environment panel".
 
 *For our example:*
-<img src = "screenshots/what-is-the-code.png">
+<img src = "screenshots/what-is-the-code.png" width = "600">
 
 ### (Optional) What have you tried thus far?:  
 
@@ -95,7 +95,7 @@ Here's how each of the "four points" (and the optional one) could be included in
 - This is considered an optional point because we understand you also may not know where to begin (and that is definitely okay - we are here to help!)
 
 *For our example:*
-<img src = "screenshots/what-have-you-tried.png">
+<img src = "screenshots/what-have-you-tried.png" width = "600">
 
 ### Step 3) Post to Slack!
 
@@ -103,18 +103,18 @@ Navigate to your particular workshop's training channel.
 
 If you wrote out our example question post in a text editor, it may have looked like this; where backticks will become code chunks in Slack:
 
-<img src = "screenshots/what-have-you-tried.png">
+<img src = "screenshots/text-editor.png" width = "500">
 
 When you are typing out your question you may find it helpful to have our "four points" to structure it but that is up to you.
 We've also included [a checklist you could use for creating your post](#posting-a-code-question-checklist).
 
 When we copy and paste our text in Slack, it may ask  you if you'd like to `Apply formatting`. Click `Apply`:
 
-<img src = "screenshots/slack-apply-formatting.png">
+<img src = "screenshots/slack-apply-formatting.png" width = "500">
 
 This will change your post to be formatted:
 
-<img src = "screenshots/slack-formatting-applied.png">
+<img src = "screenshots/slack-formatting-applied.png" width = "500">
 
 If all looks set, click the green arrow!
 
