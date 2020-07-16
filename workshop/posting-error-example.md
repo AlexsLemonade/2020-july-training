@@ -51,10 +51,7 @@ The debugging guide also has tips on first steps to take which may help you get 
 
 You may want to open up a text editor to write this out before posting (this is a personal preference thing).
 
-For our example error ...
-<img src = "screenshots/file.path-error.png" width = "600">
-
-Here's how each of the "four points" (and the optional one) could be included in your posted question; we will go through the details on each point:
+For our example error, here's how each of the "four points" (and the optional one) could be included in your posted question; we will go through the details on each point:
 
 <img src = "screenshots/breakdown.png">
 
@@ -140,10 +137,12 @@ It's in the Slack thread that you should hopefully see a response that helps you
 
 Lastly, it is helpful for the person who has responded to you or others who might have the same problem if you can remember to post on the thread if/how you resolved the problem!
 
+<img src = "screenshots/solved-thread.png" width = "200">
+
 Congrats on solving your error! :tada:
 
-*Here's a checklist you can use to craft your question post:*
 ## Posting a code question checklist
+*Here's a checklist you can use to craft your question post:*
 - [ ] What is the goal of this code?
 - [ ] Where is this error occurring (notebook/line/chunk)?
 - [ ] What is the code that is producing this error?
