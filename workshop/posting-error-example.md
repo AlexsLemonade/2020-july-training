@@ -31,9 +31,9 @@ Following these guidelines will take more time but it will increase your chances
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## What information should a question about code include?
+# What information should a question about code include?
 
-We consider the themes of a good code question post to be `context` and `specificity`.
+We consider the themes of a good troubleshooting post to be `context` and `specificity`.
 The more context you can provide, and the more specific you can be about your problem, the easier it will be for someone to help you.
 
 **Overall your posted code question should include:**
@@ -48,7 +48,7 @@ The more context you can provide, and the more specific you can be about your pr
 
 To demonstrate what we mean by these guidelines we will walk through an example:
 
-## A troubleshooting example
+# A troubleshooting example
 
 In this example, I'm using our exercise notebook, `04a-intro_to_R_exercise.Rmd`.
 
@@ -85,34 +85,51 @@ For our example error, here's how each of the "four points" (and the optional on
 
 - In our workshop, notebook references tend to make sense to provide, however, more generally this should be any context around __where__ you've encountered this error.
 
-*For our example:*  
-<img src = "screenshots/where-is-the-error.png">
+- If you are *not* working from any CCDL materials, it is *even more important* to provide context around what the notebook you are creating is supposed to be doing.
 
+- Note that line numbers change as you've added code, so line numbers as a reference aren't as helpful.
+
+*For our example:*  
+<img src = "screenshots/where-is-the-error.png" width = "600">
 
 ### What is the goal of this code?  
 
 - Providing context around your end goals for this code will help others tailor their advice toward your goal as well as helping the understand what you are working toward.
+    *Examples of informatoni you may want to include (whenever it is applicable):*
+    - What is your scientific question?
+    - What does your input data look like?
+       - What kind of file *e.g.* `.TSV`, `.fastq`?
+       - What information is included the data?
+       - What are the columns?
+       - What are the rows?
+    - What'd your desired output?
+       - What kind of results are you looking for e.g. a plot, a table, processed/filtered data?
+       - What kind of file *e.g.* `.TSV`, `.fastq`?
+
 - Sometimes you can bypass an error completely by using an alternative strategy altogether, but your helper won't be able to suggest an alternative if they don't know your ultimate goal.
 
 *For our example:*  
-<img src = "screenshots/what-is-the-goal.png" width = "500">
+<img src = "screenshots/what-is-the-goal.png" width = "600">
 
 ### What is the code that is producing this error?
 
-- You should [use backticks to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages)
-- Screenshots make it so people can't copy-paste your code to try it themselves so pasting the code with backticks makes it easiest for others to help you.
+- You should [use backticks to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages).
+Formatting your code makes it easier for others to distinguish between your code and the words in your post where you are otherwise describing the problem.
+
+- Screenshots are not ideal because others can't copy-paste your code from a screenshot. Being able to copy-paste the code with backticks makes it easiest for others to help you.
 
 *For our example:*  
-<img src = "screenshots/what-is-the-code.png" width = "500">
+<img src = "screenshots/what-is-the-code.png" width = "600">
 
 ### What is the error or problematic outcome?  
 
 - Include the any error messages verbatim. Also preferably not a screenshot so others can copy-paste for Google searching.
-- If you don't have an error message per se, but do have something else that is not working as expected, describe what isn't working and how you found out that you think it doesn't seem to be working.
+- If you don't have an error message per se, but do have something else that is not working as expected, describe what isn't working and how you found it.
      - *Example*: "This data.frame I'm showing in my code, called `cool_df` doesn't have row names when I look at it in my environment panel".
+- Context around when the error appears versus when it does not can be helpful clues to your reader.
 
 *For our example:*  
-<img src = "screenshots/what-is-the-code.png" width = "500">
+<img src = "screenshots/what-is-the-code.png" width = "600">
 
 ### (Optional) What have you tried thus far?  
 
@@ -120,8 +137,10 @@ For our example error, here's how each of the "four points" (and the optional on
 
 - If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem might be.
 
+- If you have tried solutions you have found posted online, including the links to those solutions is helpful.
+
 *For our example:*  
-<img src = "screenshots/what-have-you-tried.png" width = "500">
+<img src = "screenshots/what-have-you-tried.png" width = "600">
 
 ## Step 3) Post to Slack!
 
@@ -131,7 +150,7 @@ If you wrote out our example question post in a text editor, it may have looked 
 
 <img src = "screenshots/text-editor.png" width = "500">
 
-When you are typing out your question you may find it helpful to have our "four points" to structure it but that is up to you.
+When you are typing out your question you may find it helpful to have our "four points" as your headers but that is up to you.
 We've also included [a checklist you could use for creating your post](#posting-a-code-question-checklist).
 
 When we copy and paste our text in Slack, it may ask  you if you'd like to `Apply formatting`. Click `Apply`:
@@ -148,9 +167,9 @@ If all looks set, click the green arrow to post it!
 
 ## Step 4) Look for responses (in the same thread)!
 
-We don't want anyone's questions or responses to get lost, especially after you've follow these careful steps to craft it!
+We don't want anyone's questions or responses to get lost, especially after you've followed these careful steps to craft it!
 
-So to keep responses from getting lost, we strongly encourage you to make your question one post and keep all further messages and correspondence about that question in the same Slack thread.
+So to keep responses from getting lost, we strongly encourage you to make your main question one post and keep all further messages and correspondence about that question in the same Slack thread.
 
 To navigate to Slack threads, you can can click speech bubble in the corner of your post:
 
