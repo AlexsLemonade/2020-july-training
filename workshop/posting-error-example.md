@@ -59,15 +59,17 @@ Below I'm showing a screenshot of what this error would look like when encounter
 ## Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)
 
 The best way to learn how to solve errors in code is to figure them out yourself.
-So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (If you are feeling exasperated by your error, skip to Step 2.
+So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (If you are feeling exasperated by your error, skip to Step 2).
 
 We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/master/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
 The debugging guide also has tips on first steps to take which may help you get to the root of the problem.
 
 **A short list of things to try:**
-- Try to identify which part of your code appears to be the problem through trying smaller parts of the code and seeing if the error still occurs (called chunking)
+- Try to identify which part of your code appears to be the problem through trying smaller parts of the code and seeing if the error still occurs (called chunking).
+In the chunking example below, each highlighted portion is something you could run by itself to test.
+(Using `Command + Enter` in RStudio will run what you have highlighted.)
 
-<img src = "screenshots/chunking_code.png" width = "600">
+<img src = "screenshots/chunking_code.png" width = "500">
 
 - Go back to the beginning of your notebook and re-run your code in order and make sure you haven't missed any vital steps! Order matters!
 
