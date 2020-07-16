@@ -129,7 +129,7 @@ To navigate to Slack threads, you can can click speech bubble in the corner of y
 
 Or click on the `replies` button below your post:
 
-<img src = "screenshots/replies-slack.png" width = "200">
+<img src = "screenshots/replies-slack.png" width = "400">
 
 It's in the Slack thread that you should hopefully see a response that helps you fix your error! :tada:
 
