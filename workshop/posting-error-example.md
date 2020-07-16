@@ -18,16 +18,16 @@ Following these guidelines will take more time but it will increase your chances
 
 - [What information should a question about code include?](#what-information-should-a-question-about-code-include)
 - [A troubleshooting example](#a-troubleshooting-example)
-- [Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)](#step-1-do-what-you-can-to-try-to-solve-the-error-yourself-but-dont-tire-yourself-out)
-- [Step 2) Draft out your question you'll post.](#step-2-draft-out-your-question-youll-post)
-  - [Where is this error occurring; what notebook/chunk?](#where-is-this-error-occurring-what-notebookchunk)
-  - [What is the goal of this code?](#what-is-the-goal-of-this-code)
-  - [What is the code that is producing this error?](#what-is-the-code-that-is-producing-this-error)
-  - [What is the error or problematic outcome?](#what-is-the-error-or-problematic-outcome)
-  - [(Optional) What have you tried thus far?](#optional-what-have-you-tried-thus-far)
-- [Step 3) Post to Slack!](#step-3-post-to-slack)
-- [Step 4) Look for responses (in the same thread)!](#step-4-look-for-responses-in-the-same-thread)
-- [Posting a code question checklist](#posting-a-code-question-checklist)
+  - [Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)](#step-1-do-what-you-can-to-try-to-solve-the-error-yourself-but-dont-tire-yourself-out)
+  - [Step 2) Draft out your question you'll post.](#step-2-draft-out-your-question-youll-post)
+    - [Where is this error occurring; what notebook/chunk?](#where-is-this-error-occurring-what-notebookchunk)
+    - [What is the goal of this code?](#what-is-the-goal-of-this-code)
+    - [What is the code that is producing this error?](#what-is-the-code-that-is-producing-this-error)
+    - [What is the error or problematic outcome?](#what-is-the-error-or-problematic-outcome)
+    - [(Optional) What have you tried thus far?](#optional-what-have-you-tried-thus-far)
+  - [Step 3) Post to Slack!](#step-3-post-to-slack)
+  - [Step 4) Look for responses (in the same thread)!](#step-4-look-for-responses-in-the-same-thread)
+  - [Posting a code question checklist](#posting-a-code-question-checklist)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -38,10 +38,10 @@ The more context you can provide, and the more specific you can be about your pr
 
 **Overall your posted code question should include:**
 
+- Where is this error occurring (notebook/chunk)?
 - What is the goal of this code?
-- Where is this error occurring (notebook/line/chunk)?
-- What is the code that is producing this error? (including it formatted is helpful!)
-- What is the error or problematic outcome? (include error messages verbatim)
+- What is the code that is producing this error?
+- What is the error or problematic outcome?
 
 *Optionally:*
 - What things have you tried thus far?
@@ -64,7 +64,8 @@ So try to explore the error a bit - but we are also here to help you so don't he
 We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/master/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
 The debugging guide also has tips on first steps to take which may help you get to the root of the problem.
 
-**A short list of things to try:**
+**A short list of things to try:**  
+
 - Try to identify which part of your code appears to be the problem through trying smaller parts of the code and seeing if the error still occurs (called chunking).
 In the chunking example below, each highlighted portion is something you could run by itself to test.
 (Using `Command + Enter` in RStudio will run what you have highlighted.)
@@ -146,7 +147,7 @@ Formatting your code makes it easier for others to distinguish between your code
 
 Navigate to your particular workshop's training channel.
 
-If you wrote out our example question post in a text editor, it may have looked like this; where backticks will become code chunks in Slack:
+If you wrote out our example question post in a text editor, it may have looked like this; where backticks will become code chunks after we copy-paste it in Slack:
 
 <img src = "screenshots/text-editor.png" width = "500">
 
