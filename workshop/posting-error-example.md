@@ -6,23 +6,25 @@ title: Posting a error to Slack
 <p>We use the <b>Cancer Data Science Slack</b> for communication.
 If you haven't yet joined Cancer Data Science Slack, you will need to follow the [set up procedures described here](../virtual-setup/slack-procedures.md).
 
-During and after the workshop, we encourage you to post your coding questions to your Slack training channel. But, asking questions about code in such a way that others can readily help you can be tricky and is a skill itself!
+During and after the workshop, we encourage you to post your coding questions to your Slack training channel!
+But, asking questions about code in such a way that others can readily help you can be tricky and is a skill itself!
 
 Here we've laid out some guidelines for posting your question so that your peers and the CCDL team will more readily be able to help you reach a solution!
+Following these guidelines will take more time but it will increase your chances of getting speedier responses that more adequately help you resolve your error!
 
-**Your posting should include information that answers these four points:**
+**Overall your posted code question should include:**
 
 - What is the goal of this code?
 - Where is this error occurring (notebook/line/chunk)?
-- What code that is producing this error? (including it formatted is helpful!)
+- What is the code that is producing this error? (including it formatted is helpful!)
 - What is the error or problematic outcome? (include error messages verbatim)
 
 *Optionally:*
 - What things have you tried thus far?
 
-To demonstrate what this looks like, we will walk through an example here:
+We will demonstrate what this including this info looks like, by walking through an example.
 
-## Troubleshooting example
+## A troubleshooting example
 
 In this example, I'm using our exercise notebook, `04a-intro_to_R_exercise.Rmd`.
 
@@ -30,7 +32,7 @@ Below I'm showing a screenshot of what this error would look like when encounter
 
 <img src = "screenshots/file.path-error.png" width = "600">
 
-#### Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)
+## Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)
 
 The best way to learn how to solve errors in code is to figure them out yourself.
 So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (If you are feeling exasperated by your error, skip to Step 2.
@@ -45,66 +47,104 @@ The debugging guide also has tips on first steps to take which may help you get 
 
 - Go back to the beginning of your notebook and re-run your code in order and make sure you haven't missed any vital steps! Order matters!
 
-#### Step 2) Draft out your question.
+## Step 2) Draft out your question you'll post.
 
 You may want to open up a text editor to write this out before posting (this is a personal preference thing).
 
 For our example error ...
 <img src = "screenshots/file.path-error.png" width = "600">
 
-... here's how each of the "four points" could be included:
+Here's how each of the "four points" (and the optional one) could be included in your posted question; we will go through the details on each point:
 
-**Where is this error occurring; what <ins>notebook/line/chunk</ins>?:**  
+<img src = "screenshots/breakdown.png">
+
+### Where is this error occurring; what notebook/chunk?:
 - In our workshop, notebook references tend to make sense to provide, however, more generally this should be any context around __where__ you've encountered this error.
 
-*For our example:* 
+<img src = "screenshots/where-is-the-error.png">
 
-**What is the <ins>goal of this code</ins>?**  
+*For our example:*
+
+### What is the goal of this code?  
 
 - Providing context around your end goals for this code will help others tailor their advice toward your goal as well as helping the understand what you are working toward.
 
+<img src = "screenshots/what-is-the-goal.png">
 
-**What is <ins>the code</ins> that is producing this error? (including it formatted is helpful!):**
+### What is the code that is producing this error?:
 
-- [*In Slack, you can/should use backticks to format your code.*](#adding-code-blocks-to-messages)
-- *Screenshots make it so people can't copy-paste your code to try it themselves so pasting the code wiith backticks makes it easiest for others to help you.*
+- You should [use backticks to format your code.](#adding-code-blocks-to-messages)
+- Screenshots make it so people can't copy-paste your code to try it themselves so pasting the code wiith backticks makes it easiest for others to help you.
 
+*For our example:*
+<img src = "screenshots/what-is-the-code.png">
 
-**What is <ins>the error</ins> or problematic outcome? (include error messages verbatim):**  
+### What is <ins>the error</ins> or problematic outcome?:  
 
+- Include the any error messages verbatim. Also preferably not a screenshot so others can copy-paste for Google searching.
+- If you don't have an error message per se, but do have something else that is not working as expected, describe what isn't working and how you found out that you think it doesn't seem to be working.
+     - *Example*: "This data.frame I'm showing in my code, called `cool_df` doesn't have row names when I look at it in my environment panel".
 
-**What <ins>have you tried</ins> thus far?:**  
+*For our example:*
+<img src = "screenshots/what-is-the-code.png">
 
+### (Optional) What have you tried thus far?:  
 
+- If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem is.
 
-#### Step 3) Post to Slack!
+- This is considered an optional point because we understand you also may not know where to begin (and that is definitely okay - we are here to help!)
+
+*For our example:*
+<img src = "screenshots/what-have-you-tried.png">
+
+### Step 3) Post to Slack!
 
 Navigate to your particular workshop's training channel.
 
-Ideally you can post everything in one post and all responses to your question will be in your posts' Slack thread (more on that).
-You can feel free to keep the our questions in as headers if you like but that is up to you.
+If you wrote out our example question post in a text editor, it may have looked like this; where backticks will become code chunks in Slack:
 
-<img src = "screenshots/slack-code-block-icon.png" width = "600">
+<img src = "screenshots/what-have-you-tried.png">
 
+When you are typing out your question you may find it helpful to have our "four points" to structure it but that is up to you.
+We've also included [a checklist you could use for creating your post](#posting-a-code-question-checklist).
 
-#### Adding code blocks to messages
+When we copy and paste our text in Slack, it may ask  you if you'd like to `Apply formatting`. Click `Apply`:
 
-Code and error messages are usually easier to read when you use code formatting in Slack.
-You can either select the code block icon below the message field:
+<img src = "screenshots/slack-apply-formatting.png">
 
-<img src = "screenshots/slack-code-block-icon.png" width = "600">
+This will change your post to be formatted:
 
-Or you can type three backticks <code>```</code> into the message field and formatting will be applied:
+<img src = "screenshots/slack-formatting-applied.png">
 
-<img src = "screenshots/slack-backticks.gif" width = "600">
+If all looks set, click the green arrow!
 
-You are then ready to paste your code or error message into the grey code block.
+Slack Tip: if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the error.
 
-**If you have questions or are having trouble with Slack features, please reach out to us via direct message or, if direct messaging is not working, please email [training@ccdatalab.org](mailto:training@ccdatalab.org).**
+### Step 4) Look for responses (in the same thread)!
 
+We don't want anyone's questions or responses to get lost, especially after you've follow these careful steps to craft it!
 
-## Code question points to include checklist
-- [ ] The goal of this code I'm working on
-- [ ] The notebook/line/script that this error was encountered in
-- [ ] The code that is showing an error is included and formatted
-- [ ] The error or problematic outcome is included verbatim or otherwise described
+So to keep responses from getting lost, we strongly encourage you to make your question one post and keep all further messages and correspondence about that question in the same Slack thread.
+
+To navigate to Slack threads, you can can click speech bubble in the corner of your post:
+
+<img src = "screenshots/thread-button.png" width = "200">
+
+Or click on the `replies` button below your post:
+
+<img src = "screenshots/replies-slack.png" width = "200">
+
+It's in the Slack thread that you should hopefully see a response that helps you fix your error! :tada:
+
+<img src = "screenshots/slack-thread.png" width = "200">
+
+It is helpful for the person who has responded to you or others who might have the same problem if remember to post on the thread if/how you resolved the problem!
+
+*Here's the checklist we promised:*
+
+## Posting a code question checklist
+- [ ] What is the goal of this code?
+- [ ] Where is this error occurring (notebook/line/chunk)?
+- [ ] What is the code that is producing this error?
+- [ ] Is the code formatted?
+- [ ] What is the error or problematic outcome?
