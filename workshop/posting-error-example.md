@@ -1,5 +1,5 @@
 ---
-title: Posting a error to Slack
+title: Posting an error to Slack
 ---
 <p><img style = "padding: 0 15px; float: left;" src = "screenshots/slack-cancer-data-science-logo.png" width = "75"></p>
 <p style="margin-top: 20px;"> </p>
@@ -59,7 +59,7 @@ Below I'm showing a screenshot of what this error would look like when encounter
 ## Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)
 
 The best way to learn how to solve errors in code is to figure them out yourself.
-So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (If you are feeling exasperated by your error, skip to Step 2).
+So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (_If you are feeling exasperated by your error, skip to Step 2_).
 
 We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/master/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
 The debugging guide also has tips on first steps to take which may help you get to the root of the problem.
@@ -95,8 +95,8 @@ For our example error, here's how each of the "four points" (and the optional on
 
 ### What is the goal of this code?  
 
-- Providing context around your end goals for this code will help others tailor their advice toward your goal as well as helping the understand what you are working toward.
-    *Examples of informatoni you may want to include (whenever it is applicable):*
+- Describing your end goals for this code will provide context for others so they can tailor their advice with your goal in mind.
+    *Examples of information you may want to include (whenever it is applicable):*
     - What is your scientific question?
     - What does your input data look like?
        - What kind of file *e.g.* `.TSV`, `.fastq`?
@@ -114,7 +114,7 @@ For our example error, here's how each of the "four points" (and the optional on
 
 ### What is the code that is producing this error?
 
-- You should [use backticks to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages).
+- You should [use backticks (```) to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages) (How to do this in the next step).
 Formatting your code makes it easier for others to distinguish between your code and the words in your post where you are otherwise describing the problem.
 
 - Screenshots are not ideal because others can't copy-paste your code from a screenshot. Being able to copy-paste the code with backticks makes it easiest for others to help you.
@@ -124,13 +124,13 @@ Formatting your code makes it easier for others to distinguish between your code
 
 ### What is the error or problematic outcome?  
 
-- Include the any error messages verbatim. Also preferably not a screenshot so others can copy-paste for Google searching.
+- Include any error messages verbatim. Also preferably not a screenshot so others can copy-paste for Google searching.
 - If you don't have an error message per se, but do have something else that is not working as expected, describe what isn't working and how you found it.
      - *Example*: "This data.frame I'm showing in my code, called `cool_df` doesn't have row names when I look at it in my environment panel".
 - Context around when the error appears versus when it does not can be helpful clues to your reader.
 
 *For our example:*  
-<img src = "screenshots/what-is-the-code.png" width = "600">
+<img src = "screenshots/what-is-the-error.png" width = "600">
 
 ### (Optional) What have you tried thus far?  
 
@@ -164,7 +164,9 @@ This will change your post to be formatted:
 
 If all looks set, click the green arrow to post it!
 
-**Slack Tip:** if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the error.
+**Slack Tip:** if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the mistake:
+
+<img src = "screenshots/slack-edit-message.png" width = "500">
 
 ## Step 4) Look for responses (in the same thread)!
 
