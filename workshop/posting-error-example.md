@@ -9,8 +9,32 @@ If you haven't yet joined Cancer Data Science Slack, you will need to follow the
 During and after the workshop, we encourage you to post your coding questions to your Slack training channel.
 But, asking questions about code in such a way that others can readily help you can be tricky and is a skill itself!
 
-Here we've laid out some guidelines for posting your question so that your peers and the CCDL team will more readily be able to help you reach a solution.
+Here we've laid out guidelines for posting your question so that your peers and the CCDL team will readily be able to help you find a solution.
 Following these guidelines will take more time but it will increase your chances of getting speedier responses that more adequately help you resolve your error!
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [What information should a question about code include?](#what-information-should-a-question-about-code-include)
+- [A troubleshooting example](#a-troubleshooting-example)
+- [Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)](#step-1-do-what-you-can-to-try-to-solve-the-error-yourself-but-dont-tire-yourself-out)
+- [Step 2) Draft out your question you'll post.](#step-2-draft-out-your-question-youll-post)
+  - [Where is this error occurring; what notebook/chunk?](#where-is-this-error-occurring-what-notebookchunk)
+  - [What is the goal of this code?](#what-is-the-goal-of-this-code)
+  - [What is the code that is producing this error?](#what-is-the-code-that-is-producing-this-error)
+  - [What is the error or problematic outcome?](#what-is-the-error-or-problematic-outcome)
+  - [(Optional) What have you tried thus far?](#optional-what-have-you-tried-thus-far)
+- [Step 3) Post to Slack!](#step-3-post-to-slack)
+- [Step 4) Look for responses (in the same thread)!](#step-4-look-for-responses-in-the-same-thread)
+- [Posting a code question checklist](#posting-a-code-question-checklist)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## What information should a question about code include?
+
+We consider the themes of a good code question post to be `context` and `specificity`.
+The more context you can provide, and the more specific you can be about your problem, the easier it will be for someone to help you.
 
 **Overall your posted code question should include:**
 
@@ -22,7 +46,7 @@ Following these guidelines will take more time but it will increase your chances
 *Optionally:*
 - What things have you tried thus far?
 
-We will demonstrate what this including this info looks like, by walking through an example.
+To demonstrate what we mean by these guidelines we will walk through an example:
 
 ## A troubleshooting example
 
@@ -55,46 +79,49 @@ For our example error, here's how each of the "four points" (and the optional on
 
 <img src = "screenshots/breakdown.png">
 
-### Where is this error occurring; what notebook/chunk?:
+### Where is this error occurring; what notebook/chunk?
+
 - In our workshop, notebook references tend to make sense to provide, however, more generally this should be any context around __where__ you've encountered this error.
 
+*For our example:*  
 <img src = "screenshots/where-is-the-error.png">
 
-*For our example:*
 
 ### What is the goal of this code?  
 
 - Providing context around your end goals for this code will help others tailor their advice toward your goal as well as helping the understand what you are working toward.
+- Sometimes you can bypass an error completely by using an alternative strategy altogether, but your helper won't be able to suggest an alternative if they don't know your ultimate goal.
 
-<img src = "screenshots/what-is-the-goal.png" width = "600">
+*For our example:*  
+<img src = "screenshots/what-is-the-goal.png" width = "500">
 
-### What is the code that is producing this error?:
+### What is the code that is producing this error?
 
 - You should [use backticks to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages)
-- Screenshots make it so people can't copy-paste your code to try it themselves so pasting the code wiith backticks makes it easiest for others to help you.
+- Screenshots make it so people can't copy-paste your code to try it themselves so pasting the code with backticks makes it easiest for others to help you.
 
-*For our example:*
-<img src = "screenshots/what-is-the-code.png" width = "600">
+*For our example:*  
+<img src = "screenshots/what-is-the-code.png" width = "500">
 
-### What is <ins>the error</ins> or problematic outcome?:  
+### What is the error or problematic outcome?  
 
 - Include the any error messages verbatim. Also preferably not a screenshot so others can copy-paste for Google searching.
 - If you don't have an error message per se, but do have something else that is not working as expected, describe what isn't working and how you found out that you think it doesn't seem to be working.
      - *Example*: "This data.frame I'm showing in my code, called `cool_df` doesn't have row names when I look at it in my environment panel".
 
-*For our example:*
-<img src = "screenshots/what-is-the-code.png" width = "600">
+*For our example:*  
+<img src = "screenshots/what-is-the-code.png" width = "500">
 
-### (Optional) What have you tried thus far?:  
+### (Optional) What have you tried thus far?  
 
 - This is considered an optional point because we understand you also may not know where to begin (and that is definitely okay - we are here to help!)
 
-- If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem is.
+- If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem might be.
 
-*For our example:*
-<img src = "screenshots/what-have-you-tried.png" width = "600">
+*For our example:*  
+<img src = "screenshots/what-have-you-tried.png" width = "500">
 
-### Step 3) Post to Slack!
+## Step 3) Post to Slack!
 
 Navigate to your particular workshop's training channel.
 
@@ -117,7 +144,7 @@ If all looks set, click the green arrow to post it!
 
 **Slack Tip:** if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the error.
 
-### Step 4) Look for responses (in the same thread)!
+## Step 4) Look for responses (in the same thread)!
 
 We don't want anyone's questions or responses to get lost, especially after you've follow these careful steps to craft it!
 
