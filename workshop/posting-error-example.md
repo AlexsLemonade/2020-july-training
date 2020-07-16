@@ -30,7 +30,7 @@ In this example, I'm using our exercise notebook, `04a-intro_to_R_exercise.Rmd`.
 
 Below I'm showing a screenshot of what this error would look like when encountering it in [our RStudio Server](../virtual-setup/rstudio-login.md)
 
-<img src = "screenshots/file.path-error.png" width = "600">
+<img src = "screenshots/file.path-error.png" width = "800">
 
 ## Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)
 
@@ -40,7 +40,7 @@ So try to explore the error a bit - but we are also here to help you so don't he
 We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/master/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
 The debugging guide also has tips on first steps to take which may help you get to the root of the problem.
 
-**Some quick things to try:**
+**A short list of things to try:**
 - Try to identify which part of your code appears to be the problem through trying smaller parts of the code and seeing if the error still occurs (called chunking)
 
 <img src = "screenshots/chunking_code.png" width = "600">
@@ -90,9 +90,9 @@ Here's how each of the "four points" (and the optional one) could be included in
 
 ### (Optional) What have you tried thus far?:  
 
-- If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem is.
-
 - This is considered an optional point because we understand you also may not know where to begin (and that is definitely okay - we are here to help!)
+
+- If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem is.
 
 *For our example:*
 <img src = "screenshots/what-have-you-tried.png" width = "600">
@@ -116,9 +116,9 @@ This will change your post to be formatted:
 
 <img src = "screenshots/slack-formatting-applied.png" width = "500">
 
-If all looks set, click the green arrow!
+If all looks set, click the green arrow to post it!
 
-Slack Tip: if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the error.
+**Slack Tip:** if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the error.
 
 ### Step 4) Look for responses (in the same thread)!
 
@@ -138,10 +138,11 @@ It's in the Slack thread that you should hopefully see a response that helps you
 
 <img src = "screenshots/slack-thread.png" width = "200">
 
-It is helpful for the person who has responded to you or others who might have the same problem if remember to post on the thread if/how you resolved the problem!
+Lastly, it is helpful for the person who has responded to you or others who might have the same problem if you can remember to post on the thread if/how you resolved the problem!
 
-*Here's the checklist we promised:*
+Congrats on solving your error! :tada:
 
+*Here's a checklist you can use to craft your question post:*
 ## Posting a code question checklist
 - [ ] What is the goal of this code?
 - [ ] Where is this error occurring (notebook/line/chunk)?
