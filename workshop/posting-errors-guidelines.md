@@ -168,19 +168,17 @@ Follow up problems in the same section of code should also be kept to this same 
 ### Step 3b) In the thread of your headline, post the description you crafted in [Step 2](#step-2-draft-out-your-question-youll-post).
 
 Navigate to the Slack thread of your "headline".
-You can can click speech bubble in the corner of your post:
-
-<img src = "screenshots/thread-button.png" width = "90">
+You can can click speech bubble in the corner of your post: <img src = "screenshots/thread-button.png" width = "90">
 
 If you wrote out your error description in a text editor, it may have looked like this; where backticks we can turn into code chunks after we copy-paste it in Slack:
 
 <img src = "screenshots/text-editor.png" width = "500">
 
 When you are typing out your error description you may find it helpful to have our "four points" handy.
-We've also included [a checklist you could use for creating your post](#posting-a-code-question-checklist).
+We've included [a checklist you could use for creating your post](#posting-a-code-question-checklist) for this purpose.
 
 When you paste your text into Slack, it may ask if you'd like to `Apply formatting`. Click `Apply`.
-If it doesn't ask you about formatting for some reason, you can also click `Shift + Command + F` and it will apply the formatting.
+If Slack doesn't ask you about formatting for some reason, you can also click `Shift + Command + F` and it will apply the formatting.
 
 <img src = "screenshots/slack-apply-formatting.png" width = "500">
 
@@ -188,7 +186,7 @@ Either method will format your post like below:
 
 <img src = "screenshots/slack-formatting-applied.png" width = "500">
 
-If all looks set, click the green arrow to post it!
+If all looks set, click the green arrow to add it to the thread!
 
 **Slack Tip:** if you see a mistake in your post you missed, you can click on the three dots in the corner of your Slack post and choose `Edit message` and fix the mistake:
 
