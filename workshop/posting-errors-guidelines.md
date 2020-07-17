@@ -6,7 +6,7 @@ title: Posting an error to Slack guidlines
 <p>We use the <b>Cancer Data Science Slack</b> for communication.
 If you haven't yet joined Cancer Data Science Slack, you will need to follow the [set up procedures described here](../virtual-setup/slack-procedures.md).
 
-During and after the workshop, we encourage you to post your coding questions to your Slack training channel.
+During and after the workshop, we encourage you to post your code error question to your Slack training channel.
 But, asking questions about code in such a way that others can readily help you can be tricky and is a skill itself!
 
 Here we've laid out guidelines for posting your question so that your peers and the CCDL team will readily be able to help you find a solution.
@@ -19,15 +19,17 @@ Following these guidelines will take more time but it will increase your chances
 - [What information should a question about code include?](#what-information-should-a-question-about-code-include)
 - [A troubleshooting example](#a-troubleshooting-example)
   - [Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)](#step-1-do-what-you-can-to-try-to-solve-the-error-yourself-but-dont-tire-yourself-out)
-  - [Step 2) Draft out your question you'll post.](#step-2-draft-out-your-question-youll-post)
+  - [Step 2) Draft out the description of your error post.](#step-2-draft-out-the-description-of-your-error-post)
     - [Where is this error occurring; what notebook/chunk?](#where-is-this-error-occurring-what-notebookchunk)
     - [What is the goal of this code?](#what-is-the-goal-of-this-code)
     - [What is the code that is producing this error?](#what-is-the-code-that-is-producing-this-error)
     - [What is the error or problematic outcome?](#what-is-the-error-or-problematic-outcome)
     - [(Optional) What have you tried thus far?](#optional-what-have-you-tried-thus-far)
   - [Step 3) Post to Slack!](#step-3-post-to-slack)
+    - [Step 3a) Post the headline of your problem.](#step-3a-post-the-headline-of-your-problem)
+    - [Step 3b) In the thread of your headline, post the description you crafted in Step 2.](#step-3b-in-the-thread-of-your-headline-post-the-description-you-crafted-in-step-2)
   - [Step 4) Look for responses (in the same thread)!](#step-4-look-for-responses-in-the-same-thread)
-  - [Posting a code question checklist](#posting-a-code-question-checklist)
+  - [Posting a code error question checklist](#posting-a-code-error-question-checklist)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -74,7 +76,7 @@ In the chunking example below, each highlighted portion is something you could r
 
 - [Restart your R Session](../virtual-setup/rstudio-login.md#stoppingstarting-rstudio-sessions) and go back to the beginning of your notebook to re-run all of your code in order to make sure you haven't missed any vital steps! Order matters!
 
-## Step 2) Draft out your question you'll post.
+## Step 2) Draft out the description of your error post.
 
 You may want to open up a text editor to write this out before posting (this is a personal preference thing).
 
@@ -149,7 +151,7 @@ Also preferably not a screenshot so others can copy-paste for Google searching (
 
 First, navigate to your particular workshop's training channel.
 
-### Step 3a) Post your the headline/summary of your problem.
+### Step 3a) Post the headline of your problem.
 
 To keep new questions and responses from getting lost in the messaging board, we strongly encourage you to make a "headline" that is one post and put the longer description you crafted in step 2 in the thread of your headline.
 
@@ -161,20 +163,20 @@ To navigate to Slack threads, you can can click speech bubble in the corner of y
 <img src = "screenshots/thread-button.png" width = "200">
 
 You should try to keep all further messages and correspondence about that question in the same Slack thread.
-Follow up problems in the same section of code should also be kept to this same thread you started. 
+Follow up problems in the same section of code should also be kept to this same thread you started.
 
-### Step 3b) In the thread of your headline, post the description you crafted in step 2.
+### Step 3b) In the thread of your headline, post the description you crafted in [Step 2](#step-2-draft-out-your-question-youll-post).
 
 Navigate to the Slack thread of your "headline".
 You can can click speech bubble in the corner of your post:
 
-<img src = "screenshots/thread-button.png" width = "200">
+<img src = "screenshots/thread-button.png" width = "90">
 
-If you wrote out our example question post in a text editor, it may have looked like this; where backticks we can turn into code chunks after we copy-paste it in Slack:
+If you wrote out your error description in a text editor, it may have looked like this; where backticks we can turn into code chunks after we copy-paste it in Slack:
 
 <img src = "screenshots/text-editor.png" width = "500">
 
-When you are typing out your question you may find it helpful to have our "four points" handy.
+When you are typing out your error description you may find it helpful to have our "four points" handy.
 We've also included [a checklist you could use for creating your post](#posting-a-code-question-checklist).
 
 When you paste your text into Slack, it may ask if you'd like to `Apply formatting`. Click `Apply`.
@@ -210,7 +212,7 @@ Lastly, it is helpful for the person who has responded to you or others who migh
 
 Congrats on solving your error! :tada:
 
-## Posting a code question checklist
+## Posting a code error question checklist
 *Here's a checklist you can use to craft your question post:*
 - [ ] What is the goal of this code?
 - [ ] Where is this error occurring (notebook/line/chunk)?
