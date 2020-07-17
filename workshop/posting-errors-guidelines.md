@@ -1,5 +1,5 @@
 ---
-title: Posting an error to Slack
+title: Posting an error to Slack guidlines
 ---
 <p><img style = "padding: 0 15px; float: left;" src = "screenshots/slack-cancer-data-science-logo.png" width = "75"></p>
 <p style="margin-top: 20px;"> </p>
@@ -46,11 +46,11 @@ The more context you can provide, and the more specific you can be about your pr
 *Optionally:*
 - What things have you tried thus far?
 
-To demonstrate what we mean by these guidelines we will walk through an example:
+To demonstrate what we mean by these guidelines we will walk through an example.
 
 # A troubleshooting example
 
-In this example, I'm using our exercise notebook, `04a-intro_to_R_exercise.Rmd`.
+In this example, I'm using our exercise notebook `04a-intro_to_R_exercise.Rmd`.
 
 Below I'm showing a screenshot of what this error would look like when encountering it in [our RStudio Server](../virtual-setup/rstudio-login.md)
 
@@ -61,18 +61,18 @@ Below I'm showing a screenshot of what this error would look like when encounter
 The best way to learn how to solve errors in code is to figure them out yourself.
 So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (_If you are feeling exasperated by your error, skip to Step 2_).
 
-We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/master/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
+We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
 The debugging guide also has tips on first steps to take which may help you get to the root of the problem.
 
 **A short list of things to try:**  
 
 - Try to identify which part of your code appears to be the problem through trying smaller parts of the code and seeing if the error still occurs (called chunking).
 In the chunking example below, each highlighted portion is something you could run by itself to test.
-(Using `Command + Enter` in RStudio will run what you have highlighted.)
+(Using `Command + Enter` in RStudio will run what you have highlighted. On Windows or Linux systems it may be `Crtl + Enter`).
 
 <img src = "screenshots/chunking_code.png" width = "500">
 
-- Go back to the beginning of your notebook and re-run your code in order and make sure you haven't missed any vital steps! Order matters!
+- [Restart your R Session](../virtual-setup/rstudio-login.md#stoppingstarting-rstudio-sessions) and go back to the beginning of your notebook to re-run all of your code in order to make sure you haven't missed any vital steps! Order matters!
 
 ## Step 2) Draft out your question you'll post.
 
@@ -114,17 +114,19 @@ For our example error, here's how each of the "four points" (and the optional on
 
 ### What is the code that is producing this error?
 
-- You should [use backticks (```) to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages) (How to do this in the next step).
+- [Use backticks (```) to format your code.](../virtual-setup/slack-procedures.md#adding-code-blocks-to-messages) (How to do this in the next step).
 Formatting your code makes it easier for others to distinguish between your code and the words in your post where you are otherwise describing the problem.
 
-- Screenshots are not ideal because others can't copy-paste your code from a screenshot. Being able to copy-paste the code with backticks makes it easiest for others to help you.
+- Screenshots are not ideal because others can't copy your code from a screenshot.
+Being able to copy and paste the code itself makes it much easier for others to help you, and to provide a reply with code that you can copy!
 
 *For our example:*  
 <img src = "screenshots/what-is-the-code.png" width = "600">
 
 ### What is the error or problematic outcome?  
 
-- Include any error messages verbatim. Also preferably not a screenshot so others can copy-paste for Google searching.
+- Include any error messages verbatim.
+Also preferably not a screenshot so others can copy-paste for Google searching (A reminder to also try Google searching yourself before posting - It's often surprisingly helpful!).
 - If you don't have an error message per se, but do have something else that is not working as expected, describe what isn't working and how you found it.
      - *Example*: "This data.frame I'm showing in my code, called `cool_df` doesn't have row names when I look at it in my environment panel".
 - Context around when the error appears versus when it does not can be helpful clues to your reader.
@@ -145,20 +147,42 @@ Formatting your code makes it easier for others to distinguish between your code
 
 ## Step 3) Post to Slack!
 
-Navigate to your particular workshop's training channel.
+First, navigate to your particular workshop's training channel.
 
-If you wrote out our example question post in a text editor, it may have looked like this; where backticks will become code chunks after we copy-paste it in Slack:
+### Step 3a) Post your the headline/summary of your problem.
+
+To keep new questions and responses from getting lost in the messaging board, we strongly encourage you to make a "headline" that is one post and put the longer description you crafted in step 2 in the thread of your headline.
+
+*For our example:*  
+<img src = "screenshots/error-headline.png" width = "600">
+
+To navigate to Slack threads, you can can click speech bubble in the corner of your post:
+
+<img src = "screenshots/thread-button.png" width = "200">
+
+You should try to keep all further messages and correspondence about that question in the same Slack thread.
+Follow up problems in the same section of code should also be kept to this same thread you started. 
+
+### Step 3b) In the thread of your headline, post the description you crafted in step 2.
+
+Navigate to the Slack thread of your "headline".
+You can can click speech bubble in the corner of your post:
+
+<img src = "screenshots/thread-button.png" width = "200">
+
+If you wrote out our example question post in a text editor, it may have looked like this; where backticks we can turn into code chunks after we copy-paste it in Slack:
 
 <img src = "screenshots/text-editor.png" width = "500">
 
-When you are typing out your question you may find it helpful to have our "four points" as your headers but that is up to you.
+When you are typing out your question you may find it helpful to have our "four points" handy.
 We've also included [a checklist you could use for creating your post](#posting-a-code-question-checklist).
 
-When we copy and paste our text in Slack, it may ask  you if you'd like to `Apply formatting`. Click `Apply`:
+When you paste your text into Slack, it may ask if you'd like to `Apply formatting`. Click `Apply`.
+If it doesn't ask you about formatting for some reason, you can also click `Shift + Command + F` and it will apply the formatting.
 
 <img src = "screenshots/slack-apply-formatting.png" width = "500">
 
-This will change your post to be formatted:
+Either method will format your post like below:
 
 <img src = "screenshots/slack-formatting-applied.png" width = "500">
 
@@ -171,12 +195,6 @@ If all looks set, click the green arrow to post it!
 ## Step 4) Look for responses (in the same thread)!
 
 We don't want anyone's questions or responses to get lost, especially after you've followed these careful steps to craft it!
-
-So to keep responses from getting lost, we strongly encourage you to make your main question one post and keep all further messages and correspondence about that question in the same Slack thread.
-
-To navigate to Slack threads, you can can click speech bubble in the corner of your post:
-
-<img src = "screenshots/thread-button.png" width = "200">
 
 Or click on the `replies` button below your post:
 
