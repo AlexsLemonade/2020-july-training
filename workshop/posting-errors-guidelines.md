@@ -142,7 +142,7 @@ Also preferably not a screenshot so others can copy-paste for Google searching (
 
 - This is considered an optional point because we understand you also may not know where to begin (and that is definitely okay - we are here to help!)
 
-- If you have tried some things to fix the problem; it can be helpful for others to know what you've tried and narrow down on what the problem might be.
+- If you have tried some things to fix the problem, it can be helpful for others to know what you've tried and narrow down on what the problem might be.
 
 - If you have tried solutions you have found posted online, including the links to those solutions is helpful.
 
@@ -170,9 +170,9 @@ Follow up problems in the same section of code should also be kept to this same 
 ### Step 3b) In the thread of your headline, post the description you crafted in [Step 2](#step-2-draft-out-your-question-youll-post).
 
 Navigate to the Slack thread of your "headline".
-You can can click speech bubble in the corner of your post: <img src = "screenshots/thread-button.png" width = "90">
+You can can click speech bubble in the corner of your post: <img src = "screenshots/thread-button.png" width = "150">
 
-If you wrote out your error description in a text editor, it may have looked like this; where backticks we can turn into code chunks after we copy-paste it in Slack:
+If you wrote out your error description in a text editor, it may have looked like this, where backticks we can turn into code chunks after we copy-paste it in Slack:
 
 <img src = "screenshots/text-editor.png" width = "500">
 
@@ -204,13 +204,13 @@ Or click on the `replies` button below your post:
 
 It's in the Slack thread that you should hopefully see a response that helps you fix your error! :tada:
 
-<img src = "screenshots/slack-thread.png" width = "200">
+<img src = "screenshots/slack-thread.png" width = "350">
 
 Lastly, it is helpful for the person who has responded to you or others who might have the same problem if you can remember to post on the thread if/how you resolved the problem!
 
-<img src = "screenshots/solved-thread.png" width = "200">
+<img src = "screenshots/solved-thread.png" width = "350">
 
-Congrats on solving your error! :tada:
+Congrats on solving your error! 🎉
 
 ## Posting a code error question checklist
 
