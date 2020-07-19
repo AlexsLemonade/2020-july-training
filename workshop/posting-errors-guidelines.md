@@ -56,14 +56,15 @@ To demonstrate what we mean by these guidelines we will walk through an example.
 
 In this example, I'm using our exercise notebook `04a-intro_to_R_exercise.Rmd`.
 
-Below I'm showing a screenshot of what this error would look like when encountering it in [our RStudio Server](../virtual-setup/rstudio-login.md)
+Below I'm showing a screenshot of what this error would look like when encountering it on [our RStudio Server](../virtual-setup/rstudio-login.md).
 
 <img src = "screenshots/file.path-error.png" width = "800">
 
 ## Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)
 
 The best way to learn how to solve errors in code is to figure them out yourself.
-So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! (_If you are feeling exasperated by your error, skip to Step 2_).
+So try to explore the error a bit - but we are also here to help you so don't hesitate to ask for help! 
+(_If you are feeling exasperated by your error, skip to Step 2_).
 
 We recommend looking over our [debugging guide](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/intro-to-R-tidyverse/00b-debugging_resources.md) which can explain what some of the most common errors mean.
 The debugging guide also has tips on first steps to take which may help you get to the root of the problem.
