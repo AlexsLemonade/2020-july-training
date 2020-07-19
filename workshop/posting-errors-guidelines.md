@@ -1,11 +1,13 @@
 ---
-title: Posting an error to Slack guidlines
+title: Guidelines for posting an error to Slack
 ---
 <p><img style = "padding: 0 15px; float: left;" src = "screenshots/slack-cancer-data-science-logo.png" width = "75"></p>
 <p style="margin-top: 20px;"> </p>
-<p>We use the <b>Cancer Data Science Slack</b> for communication.
-If you haven't yet joined Cancer Data Science Slack, you will need to follow the [set up procedures described here](../virtual-setup/slack-procedures.md).
-
+<p>We use the <b>Cancer Data Science Slack</b> team administered by the CCDL for communication.
+If you haven't joined Cancer Data Science Slack yet, you will need to follow the 
+<a href="https://alexslemonade.github.io/{{site.repository}}/virtual-setup/slack-procedures.md">
+set up procedures described here</a>.</p>
+<br>
 During and after the workshop, we encourage you to post your code error question to your Slack training channel.
 But, asking questions about code in such a way that others can readily help you can be tricky and is a skill itself!
 
@@ -20,14 +22,14 @@ Following these guidelines will take more time but it will increase your chances
 - [A troubleshooting example](#a-troubleshooting-example)
   - [Step 1) Do what you can to try to solve the error yourself (but don't tire yourself out!)](#step-1-do-what-you-can-to-try-to-solve-the-error-yourself-but-dont-tire-yourself-out)
   - [Step 2) Draft out the description of your error post.](#step-2-draft-out-the-description-of-your-error-post)
-    - [Where is this error occurring; what notebook/chunk?](#where-is-this-error-occurring-what-notebookchunk)
-    - [What is the goal of this code?](#what-is-the-goal-of-this-code)
-    - [What is the code that is producing this error?](#what-is-the-code-that-is-producing-this-error)
-    - [What is the error or problematic outcome?](#what-is-the-error-or-problematic-outcome)
-    - [(Optional) What have you tried thus far?](#optional-what-have-you-tried-thus-far)
+      - [Where is this error occurring; what notebook/chunk?](#where-is-this-error-occurring-what-notebookchunk)
+      - [What is the goal of this code?](#what-is-the-goal-of-this-code)
+      - [What is the code that is producing this error?](#what-is-the-code-that-is-producing-this-error)
+      - [What is the error or problematic outcome?](#what-is-the-error-or-problematic-outcome)
+      - [(Optional) What have you tried thus far?](#optional-what-have-you-tried-thus-far)
   - [Step 3) Post to Slack!](#step-3-post-to-slack)
-    - [Step 3a) Post the headline of your problem.](#step-3a-post-the-headline-of-your-problem)
-    - [Step 3b) In the thread of your headline, post the description you crafted in Step 2.](#step-3b-in-the-thread-of-your-headline-post-the-description-you-crafted-in-step-2)
+      - [Step 3a) Post the headline of your problem.](#step-3a-post-the-headline-of-your-problem)
+      - [Step 3b) In the thread of your headline, post the description you crafted in Step 2.](#step-3b-in-the-thread-of-your-headline-post-the-description-you-crafted-in-step-2)
   - [Step 4) Look for responses (in the same thread)!](#step-4-look-for-responses-in-the-same-thread)
   - [Posting a code error question checklist](#posting-a-code-error-question-checklist)
 
@@ -211,7 +213,9 @@ Lastly, it is helpful for the person who has responded to you or others who migh
 Congrats on solving your error! :tada:
 
 ## Posting a code error question checklist
+
 *Here's a checklist you can use to craft your question post:*
+
 - [ ] What is the goal of this code?
 - [ ] Where is this error occurring (notebook/line/chunk)?
 - [ ] What is the code that is producing this error?
