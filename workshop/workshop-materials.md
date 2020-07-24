@@ -20,7 +20,7 @@ In this training workshop, we will be using the following modules:
 <!--List the specific modules you will be using and use permalinks to a specific release-->
 
 - [Single-cell RNA-seq](https://github.com/AlexsLemonade/training-modules/tree/{{site.release_tag}}/scRNA-seq)
-<!-- - [Pathway Analysis](https://github.com/AlexsLemonade/training-modules/tree/{{site.release_tag}}/pathway-analysis) -->
+- [Pathway Analysis](https://github.com/AlexsLemonade/training-modules/tree/{{site.release_tag}}/pathway-analysis)
 - [Machine Learning](https://github.com/AlexsLemonade/training-modules/tree/{{site.release_tag}}/machine-learning)
 
 
