@@ -16,7 +16,7 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 1:45 PM     | Break | |
 | 2:00 PM     | [scRNA-seq normalization and finding marker genes](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/02-normalizing_scRNA-seq.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 3:00 PM     | Questions and introduction to the exercise: <br> [Marker genes in single-cell data](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/03-scrnaseq_day1_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) |
-| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions) begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) |
+| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions) begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End             |
 | **Day 2**   | **2020-07-28** <br> [Introduction to Single-Cell RNA-Seq](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/README.md) |
 | 12:00 PM    | [Processing tag-based scRNA-seq with Alevin](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/04-tag-based_scRNA-seq_processing.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
@@ -24,7 +24,7 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 1:15 PM     | [scRNA-seq Dimension reduction](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/05-dimension_reduction_scRNA-seq.nb.html) |  Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 2:45 PM     | Break | | 
 | 3:00 PM     | Questions and introduction to the exercise: <br> [scRNA-seq Exercise 2: Here we go again!](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tage}}/scRNA-seq/06-scrnaseq_day2_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
-| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) |
+| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End | |
 | **Day 3**   | **2020-07-29** <br> Introduction to Pathway Analysis |   |
 | 12:00 PM    | Introduction to Pathway Analysis | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
@@ -34,7 +34,7 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 2:00 PM     | Break | |
 | 2:15 PM     | [Pathway analysis III: Gene Set Variation Analysis](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/pathway-analysis/03-gene_set_variation_analysis.nb.html) |  Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 3:00 PM     | Questions and introduction to the exercise | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
-| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) |
+| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End | |
 | **Day 4**   | **2020-07-30** <br> [Introduction to Machine Learning](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/machine-learning/README.md) | 
 | 12:00 PM    | Introduction to Machine Learning | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
@@ -46,9 +46,9 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 2:15 PM     | Break | |
 | 2:30 PM     | [Machine learning IV: Plotting latent variables](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/machine-learning/04-openpbta_plot_LV.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 3:00 PM     | Questions and introduction to the exercise: <br> [Exploring drug exposure in the NCI-60 cell lines](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/machine-learning/05-machine_learning_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
-| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) |
+| 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End | |  
 | **Day 5**   | **2020-07-31** <br> Consultation and Presentations |     
-| 12:00 PM    | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) |
+| 12:00 PM    | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 2:30 PM     | [Participant presentations begin](workshop-structure.md#presentations) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 5:00 PM     | Adjourn   |
