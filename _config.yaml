@@ -36,6 +36,8 @@ header_pages:
   - workshop/SCHEDULE.md
   - workshop/workshop-materials.md
   - workshop/workshop-structure.md
+  - workshop/resources-for-consultation-sessions.md
+  - workshop/posting-errors-guidelines.md
 author: Childhood Cancer Data Lab
 email: training@ccdatalab.org
 twitter_username: CancerDataLab
