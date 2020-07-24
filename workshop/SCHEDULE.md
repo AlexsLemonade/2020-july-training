@@ -11,12 +11,12 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | Time        | Topic                                          | Location |
 |-------------|------------------------------------------------|----------|
 | **Day 1**   | **2020-07-27** <br> Introduction to Single-Cell RNA-Seq |  |
-| 12:00 PM    | Welcome, Introductions, and Getting Started | Zoom: Main Session |
-| 1:00 PM     | Normalization and QC of scRNA-seq data | Zoom: Main Session |
+| 12:00 PM    | Welcome, Introductions, and Getting Started <br> [Workshop Intro Slides (pdf)](../slides/2020-07-27_CCDL_Workshop_Intro.pdf) | Zoom: Main Session |
+| 1:00 PM     | Normalization and QC of scRNA-seq data <br> [Intro to Single-Cell RNA-seq (pdf)](../slides/2020-07-27_CCDL_Workshop_Intro.pdf)| Zoom: Main Session |
 | 3:00 PM     | Questions and introduction to the exercise | Zoom: Breakout Rooms
 | 3:30 PM     | Consultation session begins | `#2020-july-training` Slack channel |
 | 5:00 PM     | End             |
-| **Day 2**   | **2020-07-28** <br> Introduction to Single-Cell RNA-Seq | 
+| **Day 2**   | **2020-07-28** <br> Introduction to Single-Cell RNA-Seq |
 | 12:00 PM    | Quantification of droplet-based scRNA-seq data <br> Dimension reduction | Zoom: Main Session |
 | 3:00 PM     | Questions and introduction to the exercise | Zoom: Breakout Rooms | 
 | 3:30 PM     | Consultation session begins | `#2020-july-training` Slack channel |
