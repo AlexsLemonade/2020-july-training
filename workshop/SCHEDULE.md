@@ -23,7 +23,7 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 1:00 PM     | Break | |
 | 1:15 PM     | [scRNA-seq Dimension reduction](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/05-dimension_reduction_scRNA-seq.nb.html) |  Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 2:45 PM     | Break | | 
-| 3:00 PM     | Questions and introduction to the exercise: <br> [scRNA-seq Exercise 2: Here we go again!](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tage}}/scRNA-seq/06-scrnaseq_day2_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
+| 3:00 PM     | Questions and introduction to the exercise: <br> [scRNA-seq Exercise 2: Here we go again!](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/06-scrnaseq_day2_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
 | 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End | |
 | **Day 3**   | **2020-07-29** <br> Introduction to Pathway Analysis |   |
