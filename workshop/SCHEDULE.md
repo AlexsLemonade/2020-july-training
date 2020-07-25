@@ -10,15 +10,15 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 
 | Time        | Topic                                          | Location |
 |-------------|------------------------------------------------|----------|
-| **Day 1**   | **2020-07-27** <br> [Introduction to Single-Cell RNA-Seq](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/README.md) |  |
+| **Day 1**   | **2020-07-27** <br> [**_Introduction to Single-Cell RNA-seq_**](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/README.md) |  |
 | 12:00 PM    | Welcome, Introductions, and Getting Started <br> [Workshop Intro Slides (pdf)](../slides/2020-07-27_CCDL_Workshop_Intro.pdf) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
-| 1:00 PM     | <br> [Intro to Single-Cell RNA-seq Slides (pdf)](../slides/2020-07-27_Intro_to_scRNA-seq.pdf) <br> [scRNA-seq QC and filtering](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/01-filtering_scRNA-seq.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
+| 1:00 PM     | [Intro to Single-Cell RNA-seq Slides (pdf)](../slides/2020-07-27_Intro_to_scRNA-seq.pdf) <br> [scRNA-seq QC and filtering](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/01-filtering_scRNA-seq.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 1:45 PM     | Break | |
 | 2:00 PM     | [scRNA-seq normalization and finding marker genes](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/02-normalizing_scRNA-seq.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 3:00 PM     | Questions and introduction to the exercise: <br> [Marker genes in single-cell data](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/03-scrnaseq_day1_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) |
 | 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions) begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End             |
-| **Day 2**   | **2020-07-28** <br> [Introduction to Single-Cell RNA-Seq](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/README.md) |
+| **Day 2**   | **2020-07-28** <br> [**_Introduction to Single-Cell RNA-seq_**](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/README.md) |
 | 12:00 PM    | [Processing tag-based scRNA-seq with Alevin](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/04-tag-based_scRNA-seq_processing.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 1:00 PM     | Break | |
 | 1:15 PM     | [scRNA-seq Dimension reduction](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/05-dimension_reduction_scRNA-seq.nb.html) |  Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
@@ -26,7 +26,7 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 3:00 PM     | Questions and introduction to the exercise: <br> [scRNA-seq Exercise 2: Here we go again!](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/scRNA-seq/06-scrnaseq_day2_exercise.Rmd) | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
 | 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End | |
-| **Day 3**   | **2020-07-29** <br> Introduction to Pathway Analysis |   |
+| **Day 3**   | **2020-07-29** <br> **_Introduction to Pathway Analysis_** |   |
 | 12:00 PM    | Introduction to Pathway Analysis | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 12:15 PM    | [Pathway analysis I: Over-representation analysis](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/pathway-analysis/01-overrepresentation_analysis.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 1:00 PM     | Break | |
@@ -36,7 +36,7 @@ __*All times are [EDT (UTC−04:00)](https://www.timeanddate.com/time/zones/edt)
 | 3:00 PM     | Questions and introduction to the exercise | Zoom: [Breakout Rooms](../virtual-setup/zoom-procedures.md#using-zoom-breakout-rooms) | 
 | 3:30 PM     | [Consultation session](workshop-structure.md#consultation-sessions)  begins | [`#2020-july-training` Slack channel](../virtual-setup/slack-procedures.md#general-use) <br> (See [Guidelines for Posting Errors to Slack](posting-errors-guidelines.md)) |
 | 5:00 PM     | End | |
-| **Day 4**   | **2020-07-30** <br> [Introduction to Machine Learning](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/machine-learning/README.md) | 
+| **Day 4**   | **2020-07-30** <br> [**_Introduction to Machine Learning_**](https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/machine-learning/README.md) | 
 | 12:00 PM    | Introduction to Machine Learning | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 12:15 PM    | [Machine learning I: Clustering & heatmaps](https://htmlpreview.github.io/?https://github.com/AlexsLemonade/training-modules/blob/{{site.release_tag}}/machine-learning/01-openpbta_heatmap.nb.html) | Zoom: [Main Session](../virtual-setup/zoom-procedures.md#joining-a-zoom-call) |
 | 12:45 PM    | Break | |
