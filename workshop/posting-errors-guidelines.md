@@ -1,5 +1,6 @@
 ---
 title: Guidelines for posting an error to Slack
+nav_title: Posting an Error
 ---
 <p><img style = "padding: 0 15px; float: left;" src = "screenshots/slack-cancer-data-science-logo.png" width = "75"></p>
 <p style="margin-top: 20px;"> </p>

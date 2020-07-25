@@ -1,5 +1,6 @@
 ---
 title: Resources for Consultation Sessions
+nav_title: Consultation Resources
 ---
 
 Our consultation sessions are designed for you to spend your time as you would like with the support of your instructors.
