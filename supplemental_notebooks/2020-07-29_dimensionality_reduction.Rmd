@@ -1,0 +1,237 @@
+---
+title: "Dimensionality Reduction concepts"
+output:   
+  html_notebook: 
+    toc: true
+    toc_float: true
+author: Joshua Shapiro for CCDL
+date: 2020-07
+---
+
+
+```{r setup}
+library(tidyverse, quietly = TRUE)
+library(plotly) # 3D plotting
+
+#set seed for reproducibility
+set.seed(2020)
+```
+
+## What is "Dimensionality Reduction" anyway?
+
+We like to throw around the term "dimensionality reduction" a lot, but what is that? 
+In some ways, it is just what it says, reducing the number of dimensions in our data set, which is probably not very helpful.
+What do we mean by a dimension?
+
+A dimension, in this context, is a measurement that we have for all of our samples. 
+In the RNA-seq context, one dimension is the expression of a single gene.
+We have tens of thousands of genes that we have measured, so we have tens of thousands of dimensions. 
+
+Perhaps unsurprisingly, this can be very hard to visualize, as our brains have trouble thinking in more than 3 dimensions, and paper or computer screens effectively only show two at a time (maybe 3 with color and color vision).
+We have some techniques that are useful, such as heatmaps of the gene expression matrix, but these can be hard to interpret, and it is extremely hard to accurately show relationships among samples in a grid (hierarchical trees are useful, but also confusing and easily misinterpreted).
+
+So what we would like to do is take this information with all of its dimensions and reduce it down to something we can visualize, while maintaing as much of the underlying information as possible. 
+
+### Penguins
+
+To illustrate this, we will use a fun little data set called _Palmer Penguins_. This is contained in an R package may not be installed on your machine, so you can install it for your user with:
+
+```{r}
+install.packages("palmerpenguins")
+```
+
+We can then load the dataframe into our environment and look at its structure with:
+
+```{r}
+penguins <- palmerpenguins::penguins
+str(penguins)
+```
+
+What we have is a data frame (`tibble`, really) with 8 columns, so 8 dimensions!
+
+There is some missing data in there, so lets clean that up:
+```{r}
+penguins <- drop_na(penguins)
+```
+
+### 3D plot
+
+We will start by focusing on the numeric dimensions: `bill_length_mm`, `bill_depth_mm`, `flipper_length_mm`, and `body_mass_g`.
+That is still 4 dimensions, which is going to be hard to visualize, but we can try.
+
+We'll start with an interactive 3d plot, using a package called `plotly`. 
+The main function `plot_ly()` works much like `ggplot`, but with a somewhat different format for its arguments, and using pipes (`%>%`) instead of plusses (`+`)
+
+```{r}
+plot_ly(penguins,
+        x = ~ bill_length_mm,
+        y = ~ bill_depth_mm,
+        z = ~ flipper_length_mm,
+        color = ~ body_mass_g) %>%
+  add_markers(size = 0.5)
+```
+
+You can drag around the 3d plot there to get different views, but it can be hard to find one that shows all of the structure in the data from a single view.
+Nonetheless, it should be clear that there are some views that are better than others, and if we display the data from those perspectives, it will show more of the variation in the data set than others where all the points are stacked on top of one another
+
+This is where dimensionality reduction will help out!
+
+### Throwing out data
+
+The simplest from of dimensionality reduction is to just throw out a dimension.
+This is what we did when we selected only the most variable genes. 
+As you might guess, this can be fraught, but it is also what happens any time we make a plot of just two dimensions of our data.
+
+Below is a plot of just the bill length and bill depth 
+There is nothing wrong with this plot, but it is certainly not a view of the full data set, and it probably doesn't show the same clarity of clustering that you might have been able to infer from playing with the 3D plot
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, 
+                     y = bill_depth_mm,
+                     color = species)) +
+  geom_point() +
+  colorblindr::scale_color_OkabeIto()
+```
+
+### Principal Components Analysis (PCA)
+
+Principal components analysis (PCA) applies linear algebra to find the axis of greatest variation in the data matrix, then the axis perpendicular to that with the most remaining variation, then the one perpendicular to those with the most remaining, etc.
+(If you remember your linear algebra, these are the eigenvectors of the matrix.)
+We scale these axes to have a mean of zero and variance of 1 for display, but it is important to know that they do not account equally for the variation in the original data set.
+
+It is also important to note that mathematically we will always end up with the same number of PCs as dimensions we started with; our dimensionality "reduction" comes from not looking at the PCs that do not account for much variation. 
+(Some implementations will throw out lower PCs by default, including the one in `scater::calculatePCA()`)
+
+Let's illustrate this process using the penguin data, using bill depth and bill length, so we can compare the result to our 2D plot above. 
+We will use the base R function `prcomp()` to apply principal component analysis.
+Since the scale for bill length and depth are quite different, we will use the argument `scale` to first transform the data so that each dimension has the same variance before PCA.
+This prevents the larger variable from dominating the results.
+
+```{r}
+penguin_bills <- penguins[,3:4]
+
+penguin_bill_pca <- prcomp(penguin_bills, scale = TRUE)
+```
+
+This returns a list, with the PCA transformed data is in the `$x` position, so lets plot the first two PCs from that matrix:
+
+```{r}
+ggplot(as.data.frame(penguin_bill_pca$x), 
+       aes(x = PC1, y = PC2,          
+           color = penguins$species)) +
+  geom_point() + 
+  colorblindr::scale_color_OkabeIto()
+```
+
+If you compare this to the plot above, you should see that it is just a rotation and scaling of the original data. 
+If we looked at just PC1, we would retain most of the variation in the data.
+
+Now let's move up to three dimensions, adding in flipper length!
+```{r}
+penguin_lengths <- penguins[,3:5] 
+
+penguin_length_pca <- prcomp(penguin_lengths, scale = TRUE)
+```
+
+```{r}
+ggplot(as.data.frame(penguin_length_pca$x), 
+       aes(x = PC1, y = PC2,
+           color = penguins$species)) +
+  geom_point() + 
+  colorblindr::scale_color_OkabeIto()
+```
+
+It turns out that this looks quite similar overall, though some points may have moved. 
+This is because it turns out that there are some reasonable correlations between dimensions in the data, and in particular between bill width and flipper length:
+
+```{r}
+cor(penguins$bill_length_mm, penguins$flipper_length_mm)
+```
+
+PCA is in effect rotating the data to remove correlations between the new axes, and correlated data end up collapsed into a single dimension.
+
+If you play around with the 3D plot, you should be able to find a rotation that gives a similar view to the plot above.
+
+Note that this plot does not necessarily give the best separation of species!
+The PCA we performed was blind to that information, and only finds a projection based on variation, not species id.
+
+
+We can still plot the remaing dimension, just to see if it retains information we care about:
+
+```{r}
+ggplot(as.data.frame(penguin_length_pca$x), 
+       aes(x = PC3,
+           fill = penguins$species)) +
+  geom_histogram() + 
+  colorblindr::scale_fill_OkabeIto()
+```
+
+There may still be some information there, especially distinguishing Adelie and Chinstrap penguins, but it is likely less than we get from the first two dimensions, so we may be comfortable discarding it.
+
+### What about UMAP & tSNE?
+
+UMAP and tSNE allow non-linear transforamations of the dimensions, but perform the conceptually similar task of creating a transformation that captures most of the variation in the multidimenstional data in two axes.
+
+Let's see what the UMAP projection looks like:
+```{r}
+penguin_length_umap <- uwot::umap(penguin_lengths)
+
+ggplot(as.data.frame(penguin_length_umap),
+       aes(x = V1, y = V2, 
+       color = penguins$species)) + 
+  geom_point() + 
+  colorblindr::scale_color_OkabeIto()
+```
+
+You can see that this has separated the data into much more discrete clusters (that do not always align with species), but that the data no longer look much at all like the original data. 
+
+In this data, the results are also unstable: repeating the above code gives a different looking result!
+
+Let's see what the UMAP projection looks like:
+```{r}
+penguin_length_umap <- uwot::umap(penguin_lengths)
+
+ggplot(as.data.frame(penguin_length_umap),
+       aes(x = V1, y = V2, 
+       color = penguins$species)) + 
+  geom_point() + 
+  colorblindr::scale_color_OkabeIto()
+```
+
+
+What about tsne? Let's have a look:
+
+```{r}
+penguin_length_tsne <- Rtsne::Rtsne(penguin_lengths)
+
+ggplot(as.data.frame(penguin_length_tsne$Y),
+       aes(x = V1, y = V2, 
+       color = penguins$species)) + 
+  geom_point() + 
+  colorblindr::scale_color_OkabeIto()
+```
+
+
+### More dimensions
+
+The extension of these techniques to more dimensions is mathematically relatively straightforward, though it gets harder for our brains to envision. We can easily add in the mass of the penguins for a fourth dimension:
+
+```{r}
+penguin_all_pca <- prcomp(penguins[,3:6], scale = TRUE)
+
+ggplot(as.data.frame(penguin_all_pca$x), 
+       aes(x = PC1, y = PC2,
+           color = penguins$species)) +
+  geom_point() + 
+  colorblindr::scale_color_OkabeIto()
+```
+
+Extending this idea to thousands of dimensions may make your head hurt, but hopefully you can start to get the idea!
+And it is certainly easier than trying to actually plot thousands of dimensions at the same time!
+
+
+## Session Info
+```{r sessioninfo}
+sessionInfo()
+```
+
