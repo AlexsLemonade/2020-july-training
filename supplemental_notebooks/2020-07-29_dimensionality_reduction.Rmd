@@ -36,7 +36,7 @@ So what we would like to do is take this information with all of its dimensions 
 
 To illustrate this, we will use a fun little data set called _Palmer Penguins_. This is contained in an R package may not be installed on your machine, so you can install it for your user with:
 
-```{r}
+```{r eval = FALSE}
 install.packages("palmerpenguins")
 ```
 
