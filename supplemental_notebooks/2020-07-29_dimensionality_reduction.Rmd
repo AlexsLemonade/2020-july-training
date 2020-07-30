@@ -49,7 +49,7 @@ str(penguins)
 
 What we have is a data frame (`tibble`, really) with 8 columns, so 8 dimensions!
 
-There is some missing data in there, so lets clean that up:
+There is some missing data in there, so let's clean that up:
 ```{r}
 penguins <- drop_na(penguins)
 ```
@@ -82,8 +82,8 @@ The simplest from of dimensionality reduction is to just throw out a dimension.
 This is what we did when we selected only the most variable genes. 
 As you might guess, this can be fraught, but it is also what happens any time we make a plot of just two dimensions of our data.
 
-Below is a plot of just the bill length and bill depth 
-There is nothing wrong with this plot, but it is certainly not a view of the full data set, and it probably doesn't show the same clarity of clustering that you might have been able to infer from playing with the 3D plot
+Below is a plot of just the bill length and bill depth.
+There is nothing wrong with this plot, but it is certainly not a view of the full data set, and it probably doesn't show the same clarity of clustering that you might have been able to infer from playing with the 3D plot.
 
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, 
@@ -156,7 +156,7 @@ Note that this plot does not necessarily give the best separation of species!
 The PCA we performed was blind to that information, and only finds a projection based on variation, not species id.
 
 
-We can still plot the remaing dimension, just to see if it retains information we care about:
+We can still plot the remaining dimension, just to see if it retains information we care about:
 
 ```{r}
 ggplot(as.data.frame(penguin_length_pca$x), 
@@ -168,9 +168,9 @@ ggplot(as.data.frame(penguin_length_pca$x),
 
 There may still be some information there, especially distinguishing Adelie and Chinstrap penguins, but it is likely less than we get from the first two dimensions, so we may be comfortable discarding it.
 
-### What about UMAP & tSNE?
+### What about UMAP & t-SNE?
 
-UMAP and tSNE allow non-linear transforamations of the dimensions, but perform the conceptually similar task of creating a transformation that captures most of the variation in the multidimenstional data in two axes.
+UMAP and t-SNE allow non-linear transformations of the dimensions, but perform the conceptually similar task of creating a transformation that captures most of the variation in the multidimensional data in two axes.
 
 Let's see what the UMAP projection looks like:
 ```{r}
@@ -199,7 +199,7 @@ ggplot(as.data.frame(penguin_length_umap),
 ```
 
 
-What about tsne? Let's have a look:
+What about t-SNE? Let's have a look:
 
 ```{r}
 penguin_length_tsne <- Rtsne::Rtsne(penguin_lengths)
@@ -234,4 +234,3 @@ And it is certainly easier than trying to actually plot thousands of dimensions 
 ```{r sessioninfo}
 sessionInfo()
 ```
-
