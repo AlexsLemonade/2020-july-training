@@ -49,7 +49,7 @@ str(penguins)
 
 What we have is a data frame (`tibble`, really) with 8 columns, so 8 dimensions!
 
-There is some missing data in there, so let's clean that up:
+There is some missing data in there, so let's clean that up with `tidyr::drop_na()`, which will remove any rows with missing values:
 ```{r}
 penguins <- drop_na(penguins)
 ```
