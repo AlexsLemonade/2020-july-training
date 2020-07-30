@@ -1,0 +1,206 @@
+---
+title: "Additional pathway analysis material"
+output:   
+  html_notebook: 
+    toc: true
+    toc_float: true
+author: Jaclyn Taroni for CCDL
+date: 2020-07
+---
+
+```{r}
+library(magrittr)
+library(msigdbr)
+library(clusterProfiler)
+library(fgsea)
+library(GSVA)
+library(limma)
+library(org.Hs.eg.db)
+```
+
+## Over-representation analysis (ORA)
+
+We had some questions about selecting a background set for ORA. 
+Let's revisit the neuron marker data from the scRNA-seq glioblastoma (GBM) data.
+
+```{r}
+# Create a directory to hold the GBM marker data for the purpose of this 
+# notebook
+gbm_marker_dir <- file.path("data", "gbm-marker")
+if (!dir.exists(gbm_marker_dir)) {
+  dir.create(gbm_marker_dir, recursive = TRUE)
+}
+
+# Location of the backup marker data during this workshop
+neuron_marker_file <- file.path("~", "shared-data", "training-modules", "magic", 
+                                "2020-july", "scRNA-seq", "analysis", 
+                                "glioblastoma", "markers", "Neuron_markers.tsv")
+# Location that it should be copied to
+copied_marker_file <- file.path(gbm_marker_dir, "Neuron_markers.tsv")
+
+# Copy to the GBM marker directory for the purpose of this notebook if it's
+# not already there
+if (!file.exists(copied_marker_file)) {
+  file.copy(neuron_marker_file, gbm_marker_dir)
+}
+```
+
+### Gene sets
+
+We'll use the human KEGG datasets from the `msigdbr` package.
+
+```{r}
+hs_kegg_df <- msigdbr(species = "Homo sapiens") %>%
+  dplyr::filter(gs_cat == "C2",  # curated gene sets 
+                gs_subcat == "CP:KEGG")  # KEGG pathways 
+```
+
+### Read in and prepare marker data
+
+**The following code should look familiar** -- it's what we used in the first pathway analysis notebook (`01-overrepresentation_analysis`). 
+
+```{r}
+neuron_markers_df <- readr::read_tsv(copied_marker_file)
+
+# This returns a named vector which we can convert to a data frame, where
+# the keys (Ensembl IDs) are the names
+symbols_vector <- mapIds(org.Hs.eg.db,  # Specify the annotation package
+                         # The vector of gene identifiers we want to 
+                         # map
+                         keys = neuron_markers_df$gene, 
+                         # The type of gene identifier we want returned
+                         column = "SYMBOL", 
+                         # What type of gene identifiers we're starting
+                         # with
+                         keytype = "ENSEMBL", 
+                         # In the case of 1:many mappings, return the
+                         # first one. This is default behavior!
+                         multiVals = "first") 
+
+# We would like a data frame we can join to the marker stats
+neuron_marker_symbols <- data.frame(
+  ensembl_id = names(symbols_vector),
+  gene_symbol = symbols_vector,
+  stringsAsFactors = FALSE
+) %>%
+  # If an Ensembl gene identifier doesn't map to a gene symbol, drop that
+  # from the data frame
+  dplyr::filter(!is.na(gene_symbol))
+
+neuron_markers_df <- neuron_marker_symbols %>%
+  # Using a left join removes the rows without gene symbols because those rows
+  # have already been removed in neuron_marker_symbols
+  dplyr::left_join(neuron_markers_df,
+                   # The name of the column that contains the Ensembl gene IDs
+                   # in the left data frame and right data frame
+                   by = c("ensembl_id" = "gene"))
+```
+
+### Analysis
+
+We're again going to use the top 100 genes for each comparison as our gene set of interest.
+
+```{r top_neuron_genes, live = TRUE}
+# Select genes that are in the top 100 for at least one comparison to other
+# cell types -- use gene symbols
+top_neuron_genes <- neuron_markers_df %>%
+  dplyr::filter(Top <= 100) %>%
+  dplyr::pull(gene_symbol)
+
+# Because genes can theoretically be listed as many times as there are other
+# cell types, we need to filter to unique genes
+top_neuron_genes <- unique(as.character(top_neuron_genes))
+```
+
+For our background set in the ORA notebook in the module, we used all the genes that passed the filter in the scRNA-seq module: genes that were expressed in at least 200 cells.
+
+```{r}
+detected_genes <- unique(as.character(neuron_markers_df$gene_symbol))
+```
+
+And then here's how we perform ORA with `enricher()` using `detected_genes` for our `universe` argument.
+
+```{r kegg_ora}
+kegg_ora_results <- enricher(
+  gene = top_neuron_genes,  # Genes of interest
+  pvalueCutoff = 0.05,  
+  pAdjustMethod = "BH",  # FDR
+  universe = detected_genes,  # Background set
+  # The pathway information should be a data frame with a term name or 
+  # identifier and the gene identifiers
+  TERM2GENE = dplyr::select(hs_kegg_df,  
+                            gs_name,
+                            gene_symbol)
+)
+```
+
+**Here's how at least two of your instructors think about what an analysis using this background set means:**
+
+* What is over-represented in this neuron set relative to the other cell types in this experiment?
+* What is over-represented of the genes that we have any power to _say anything about_ in this experiment?
+
+In reality, these questions aren't mutually exclusive -- both are true!
+
+Let's take a look at the significant results:
+
+```{r}
+data.frame(kegg_ora_results@result %>% dplyr::filter(p.adjust < 0.05))
+```
+
+What ends up being included in our tests overall are the **genes in the intersection of our background set and the pathway set**.
+
+The denominator in the `GeneRatio` column is the intersection of the genes of interest with the genes in the pathway set:
+
+```{r}
+length(
+  intersect(top_neuron_genes, # unique neuron genes -- "genes of interest"
+            unique(hs_kegg_df$gene_symbol))  # unique genes in KEGG
+)
+```
+
+The denominator in the `BgRatio` column is the intersection of the detected genes with the genes in the pathway set:
+
+```{r}
+length(
+  intersect(detected_genes,
+            unique(hs_kegg_df$gene_symbol))
+)
+```
+
+To use all genes in the genome as background, we skip the `universe` argument to `enricher()`.
+
+```{r}
+all_background_results  <- enricher(
+  gene = top_neuron_genes,  # Genes of interest
+  pvalueCutoff = 0.05,  
+  pAdjustMethod = "BH",  # FDR
+  TERM2GENE = dplyr::select(hs_kegg_df,  
+                            gs_name,
+                            gene_symbol)
+)
+```
+
+This is sort of like asking "What is over-represented in neurons vs. anything in the genome?" because we assume that the KEGG pathway genes can include any genes in the genome.
+
+Here are the results:
+
+```{r}
+data.frame(all_background_results@result %>% dplyr::filter(p.adjust < 0.05))
+```
+
+Notice the denominator for `GeneRatio` is the same, but the denominator in `BgRatio` is now the number of unique genes in the KEGG pathway sets:
+
+```{r}
+length(unique(hs_kegg_df$gene_symbol))
+```
+
+**When we're doing an expression-based analysis, we almost always want the first case where we use the genes we have any power to say anything about as our background set.** 
+The "extra" 1542 background genes that are in the KEGG pathway sets may have characteristics that make them less likely to be called as significant or to be detected independent of the classification you are testing (e.g., GC content).
+
+## Gene Set Enrichment Analysis (GSEA)
+
+Sample label/phenotype permuting GSEA
+
+## Gene Set Variation Analysis (GSVA)
+
+What can we do with these scores?
