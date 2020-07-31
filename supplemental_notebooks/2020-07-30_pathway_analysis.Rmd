@@ -254,7 +254,7 @@ This is sort of like asking "What is over-represented in neurons vs. anything in
 Here are the results:
 
 ```{r}
-data.frame(all_background_results@result %>% dplyr::filter(p.adjust < 0.05))
+data.frame(all_background_results@result) %>% dplyr::filter(p.adjust < 0.05)
 ```
 
 Notice the denominator for `GeneRatio` is the same, but the denominator in `BgRatio` is now the number of unique genes in the KEGG pathway sets:
