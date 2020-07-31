@@ -8,6 +8,14 @@ author: Jaclyn Taroni for CCDL
 date: 2020-07
 ---
 
+In this notebook, we'll cover some additional material related to the three kinds of pathway approaches we covered in the workshop: over-representation analysis (ORA), Gene Set Enrichment Analysis (GSEA), and Gene Set Variation Analysis (GSVA).
+
+Specifically, we're going to cover the following:
+
+1. Selecting a background set for ORA
+2. Preparing files for phenotype permutated GSEA and some background on why we'd want to use GSEA in this way
+3. Testing GSVA pathway scores for differential expression
+
 # Set up
 
 ## Moving files around -- feel free to skip this section!
@@ -179,7 +187,7 @@ For our background set in the ORA notebook in the module, we used all the genes 
 detected_genes <- unique(as.character(neuron_markers_df$gene_symbol))
 ```
 
-And then here's how we perform ORA with `enricher()` using `detected_genes` for our `universe` argument.
+And then here's how we performed ORA with `enricher()` using `detected_genes` for our `universe` argument.
 
 ```{r kegg_ora}
 kegg_ora_results <- enricher(
