@@ -636,7 +636,7 @@ fit2 <- eBayes(fit)
 ```
 
 Let's take a look at the top 10 pathways returned.
-Without specifying a coefficient, `topTable()` will report the F-tests statistics for each of the three contrasts: treatment in Group 3, treatment in Group 4, and differences in response between the subtypes.
+Without specifying a coefficient, `topTable()` will report the F-statistics for testing whether any of the contrasts (treatment in Group 3, treatment in Group 4, and differences in response between the subtypes) are non-zero.
 The null hypothesis is that the pathways do not vary in any way between contrasts.
 
 ```{r}
