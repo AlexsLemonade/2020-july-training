@@ -145,8 +145,8 @@ neuron_marker_symbols <- data.frame(
   stringsAsFactors = FALSE
 ) %>%
   # If an Ensembl gene identifier doesn't map to a gene symbol, drop that
-  # from the data frame
-  dplyr::filter(!is.na(gene_symbol))
+  # row from the data frame
+  tidyr::drop_na(gene_symbol)
 
 neuron_markers_df <- neuron_marker_symbols %>%
   # Using a left join removes the rows without gene symbols because those rows
@@ -205,7 +205,7 @@ In reality, these questions aren't mutually exclusive -- both are true!
 Let's take a look at the significant results:
 
 ```{r}
-data.frame(kegg_ora_results@result %>% dplyr::filter(p.adjust < 0.05))
+data.frame(kegg_ora_results@result) %>% dplyr::filter(p.adjust < 0.05)
 ```
 
 What ends up being included in our tests overall are the **genes in the intersection of our background set and the pathway set**.
@@ -259,7 +259,7 @@ length(unique(hs_kegg_df$gene_symbol))
 The "extra" 1542 background genes that are in the KEGG pathway sets may have characteristics that make them less likely to be called as significant or to be detected independent of the classification you are testing (e.g., GC content, tissue specificity).
 
 ```{r}
-# Remove somethings from the global environment before moving on to other 
+# Remove some things from the global environment before moving on to other 
 # methods
 rm(all_background_results, 
    kegg_ora_results,
@@ -275,7 +275,8 @@ rm(all_background_results,
 
 ## Gene Set Enrichment Analysis (GSEA)
 
-In the GSEA notebook (`02-gene_set_enrichment_analysis`), we used GSEA preranked. 
+In the GSEA notebook (`02-gene_set_enrichment_analysis`), we used GSEA **preranked**, which we supplied with a list of genes by ranked some score.
+Significance testing was performed by permuting the gene labels (creating random gene sets as a null comparison) 
 GSEA preranked is pretty general -- it doesn't assume that the input data is derived from an expression experiment.
 GSEA can also be run where, instead of permuting the gene labels, the sample or phenotype labels are permuted.
 (This does assume that we're using gene expression data.)
@@ -395,7 +396,7 @@ collapsed_norm_counts_df <- norm_counts_df %>%
 
 We tried to get `fgsea::fgseaLabel()` to work for these data and received an uninformative error!
 
-```{r
+```r
 fgseaLabel(
   pathway = hs_hallmark_list,  # list format instead of tidy format
   mat = collapsed_norm_mat,   # matrix where rownames are gene symbols
@@ -453,7 +454,7 @@ ArrayTools::output.cls(phenotype_df,
                                             "pdx_medulloblastoma_molecular_subtype"))
 ```
 
-Here's a screenshot of how we could use these files on GenePattern:
+Here's a screenshot of how we could use these files on [GenePattern](https://www.genepattern.org/):
 
 ![](screenshots/gsea-genepattern-screenshot.png)
 
@@ -698,5 +699,4 @@ data.frame(gsva_score = gsva_results["HALLMARK_HEDGEHOG_SIGNALING", ],
 ```{r}
 sessionInfo()
 ```
-
 
