@@ -629,23 +629,23 @@ contrast_matrix <- makeContrasts(
   group_diff = (Group_4.digoxin-Group_4.none)-(Group_3.digoxin-Group_3.none),
   levels = design_mat
 )
-fit2 <- contrasts.fit(fit, contrast_matrix)
+fit <- contrasts.fit(fit, contrast_matrix)
 
 # Apply empirical Bayes smoothing
-fit2 <- eBayes(fit2)
+fit <- eBayes(fit)
 ```
 
 We can look at a Venn diagram of significantly differentially expressed pathways for each contrast with the following:
 
 ```{r}
-vennDiagram(decideTests(fit2))
+vennDiagram(decideTests(fit))
 ```
 
 To pull out a specific contrast, we can use the `coef` argument to `topTable()`.
 Here, we're pulling out the difference in treatment effect by group.
 
 ```{r}
-topTable(fit2, coef = "group_diff", number = 10, adjust = "BH")
+topTable(fit, coef = "group_diff", number = 10, adjust = "BH")
 ```
 
 #### Visualizing individual pathways
