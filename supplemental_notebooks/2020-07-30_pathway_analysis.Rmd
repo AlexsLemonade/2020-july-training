@@ -404,7 +404,7 @@ collapsed_norm_counts_df <- norm_counts_df %>%
 
 We tried to get `fgsea::fgseaLabel()` to work for these data and received an uninformative error!
 
-```r
+```
 fgseaLabel(
   pathway = hs_hallmark_list,  # list format instead of tidy format
   mat = collapsed_norm_mat,   # matrix where rownames are gene symbols
@@ -423,7 +423,7 @@ Uninformative!
 
 So instead, we'll show you how to create the files you'd need to run GSEA on [GenePattern](https://www.genepattern.org/).
 
-We'll need the expression data in [GCT (Gene Cluster Text) format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GCT:_Gene_Cluster_Text_file_format_.28.2A.gct.29) and the phenotype labels for two group in the [CLS format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#CLS:_Categorical_.28e.g_tumor_vs_normal.29_class_file_format_.28.2A.cls.29).
+We'll need the expression data in [GCT (Gene Cluster Text) format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GCT:_Gene_Cluster_Text_file_format_.28.2A.gct.29) and the phenotype labels for the two group comparison in the [CLS format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#CLS:_Categorical_.28e.g_tumor_vs_normal.29_class_file_format_.28.2A.cls.29).
 
 We can use some helpful functions from the `ArrayTools` package to write these files out.
 First, we need to get the expression data (normalized counts) into a special object called an `ExpressionSet` and then we can write out a GCT file.
@@ -468,7 +468,8 @@ Here's a screenshot of how we could use these files on [GenePattern](https://www
 
 **Some options in this screenshot to be aware of:**
 
-- We set `the permutation` type to phenotype.
+- We set the `permutation type` to `phenotype`.
+  This way of running GSEA is distinct from the GSEA preranked methodology we covered during the main session.
 - We use `No_Collapse` option for `collapse dataset` because we've already performed the collapse step within R before writing out the GCT file.
 - As of writing this, only gene sets that use gene symbols were available from the `gene sets database` dropdown menu.
   That's why we convert to gene symbols in this notebook.
@@ -595,6 +596,7 @@ We can use `limma` to identify the following:
 
 You may notice that we could only take into account one of these labels (Group) when we put together the files required for running GSEA. 
 That's a limitation of running GSEA with phenotype permutation.
+We could perform separate analyses for the Group 3 and Group 4 samples, but then we'd have to use GSEA preranked due to the sample sizes.
 
 ```{r}
 # Create a factor that combines the molecular subtype and treatment information
