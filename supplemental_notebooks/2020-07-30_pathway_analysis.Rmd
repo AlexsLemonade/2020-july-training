@@ -466,6 +466,14 @@ Here's a screenshot of how we could use these files on [GenePattern](https://www
 
 ![](screenshots/gsea-genepattern-screenshot.png)
 
+**Some options in this screenshot to be aware of:**
+
+- We set `the permutation` type to phenotype.
+- We use `No_Collapse` option for `collapse dataset` because we've already performed the collapse step within R before writing out the GCT file.
+- As of writing this, only gene sets that use gene symbols were available from the `gene sets database` dropdown menu.
+  That's why we convert to gene symbols in this notebook.
+- No `chip platform file` should be required because we don't need GSEA to perform a collapse step for us.
+
 Let's clean up the environment a bit before we move on to GSVA.
 
 ```{r}
@@ -626,81 +634,98 @@ fit2 <- eBayes(fit)
 ```
 
 Let's take a look at the top 10 pathways returned.
-(To look just at the pathways for the Group 3 digoxin vs. no treatment, we could do `topTable(fit2, coef = 1)`, instead.)
+Without specifying a coefficient, `topTable()` will report the F-tests statistics for each of the three contrasts: treatment in Group 3, treatment in Group 4, and differences in response between the subtypes.
+The null hypothesis is that the pathways do not vary in any way between contrasts.
 
 ```{r}
-topTable(fit2, number = 10)
+topTable(fit2, number = 10, adjust = "BH")
 ```
 
-It can be helpful to visualize these pathways individually, with something like a jitter plot rather than a heatmap.
-
-```{r}
-data.frame(gsva_score = gsva_results["HALLMARK_TGF_BETA_SIGNALING", ],
-           subtype_treatment) %>%
-  ggplot2::ggplot(ggplot2::aes(x = subtype_treatment,
-                               y = gsva_score)) +
-  ggplot2::geom_jitter(width = 0.1, alpha = 0.5) +
-  ggplot2::theme_bw() +
-  ggplot2::stat_summary(
-    geom = "point",
-    fun = "mean",
-    size = 3,
-    color = "blue",
-    pch = 18
-  ) +
-  ggplot2::ggtitle("HALLMARK_TGF_BETA_SIGNALING")
-```
+To pull out a specific contrast, we can use the `coef` argument to `topTable()`.
+Here, we're pulling out the difference in treatment effect by group (`(Group_4.digoxin-Group_4.none)-(Group_3.digoxin-Group_3.none)`) with `coef = 3`.
 
 ```{r}
-data.frame(gsva_score = gsva_results["HALLMARK_INTERFERON_GAMMA_RESPONSE", ],
-           subtype_treatment) %>%
-  ggplot2::ggplot(ggplot2::aes(x = subtype_treatment,
-                               y = gsva_score)) +
-  ggplot2::geom_jitter(width = 0.1, alpha = 0.5) +
-  ggplot2::theme_bw() +
-  ggplot2::stat_summary(
-    geom = "point",
-    fun = "mean",
-    size = 3,
-    color = "blue",
-    pch = 18
-  ) +
-  ggplot2::ggtitle("HALLMARK_INTERFERON_GAMMA_RESPONSE")
+topTable(fit2, coef = 3, number = 10, adjust = "BH")
+```
+
+#### Visualizing individual pathways
+
+It can be helpful to visualize these pathways individually, with something like a jitter plot rather than a heatmap, if we're trying to interpret our differential expression results.
+
+Here we're writing a custom function that will make a jitter plot for whatever pathway we specify as an argument (the x-axis will always be the interaction of subtype and treatment):
+
+```{r}
+pathway_jitter_wrapper <- function(pathway_name) {
+  # Given a pathway_name that matches a row name in gsva_results (e.g., 
+  # "HALLMARK_TGF_BETA_SIGNALING"), produce a jitter plot with mean points
+  
+  # If the pathway_name argument isn't in the rownames of the GSVA results, 
+  # throw an error!
+  if (!(pathway_name %in% rownames(gsva_results))) {
+    stop(paste(pathway_name, "is not in rownames(gsva_results)"))
+  }
+  
+  # Create a data frame where the gsva_score column contains the scores for
+  # the pathway specified with the pathway_name argument
+  pathway_df <- data.frame(
+    gsva_score = gsva_results[pathway_name, ],
+    subtype_treatment
+  ) 
+  
+  # Replace all underscores with spaces in the pathway name for the plot title
+  pathway_plot_title <- stringr::str_replace_all(pathway_name, "_", " ")
+  
+  pathway_df %>%
+    # Make a jitter plot, where the x-axis is the interaction(subtype, treatment)
+    # and the y-axis has the pathway GSVA score
+    ggplot2::ggplot(ggplot2::aes(x = subtype_treatment,
+                                 y = gsva_score)) +
+    ggplot2::geom_jitter(width = 0.1, alpha = 0.5) +
+    # Use pub-ready theme!
+    ggplot2::theme_bw() +
+    # Add a blue diamond to indicate the mean value
+    ggplot2::stat_summary(
+      geom = "point",
+      fun = "mean",
+      size = 3,
+      color = "blue",
+      pch = 18
+    ) +
+    # Make the labels of the plot more appealing!
+    ggplot2::labs(title = pathway_plot_title,
+                  xlab = "interaction(subtype, treatment)",
+                  ylab = "GSVA score") + 
+    # Rotate the x-axis labels 45 degrees
+    # Make the title bold and center it
+    # Make all the text on the plot bigger
+    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+                   plot.title = ggplot2::element_text(face = "bold", 
+                                                      hjust = 0.5),
+                   text = ggplot2::element_text(size = 12))
+
+}
+```
+
+Let's use this function a few times to look at different pathways! 
+If you're going to do something more than twice, it can be helpful to [write functions](https://swcarpentry.github.io/r-novice-inflammation/02-func-R/) so if you decide to make changes you only have to change one part of your code.
+
+```{r}
+pathway_jitter_wrapper("HALLMARK_TGF_BETA_SIGNALING")
 ```
 
 ```{r}
-data.frame(gsva_score = gsva_results["HALLMARK_G2M_CHECKPOINT", ],
-           subtype_treatment) %>%
-  ggplot2::ggplot(ggplot2::aes(x = subtype_treatment,
-                               y = gsva_score)) +
-  ggplot2::geom_jitter(width = 0.1, alpha = 0.5) +
-  ggplot2::theme_bw() +
-  ggplot2::stat_summary(
-    geom = "point",
-    fun = "mean",
-    size = 3,
-    color = "blue",
-    pch = 18
-  ) +
-  ggplot2::ggtitle("HALLMARK_G2M_CHECKPOINT")
+pathway_jitter_wrapper("HALLMARK_INTERFERON_GAMMA_RESPONSE")
 ```
 
 ```{r}
-data.frame(gsva_score = gsva_results["HALLMARK_HEDGEHOG_SIGNALING", ],
-           subtype_treatment) %>%
-  ggplot2::ggplot(ggplot2::aes(x = subtype_treatment,
-                               y = gsva_score)) +
-  ggplot2::geom_jitter(width = 0.1, alpha = 0.5) +
-  ggplot2::theme_bw() +
-  ggplot2::stat_summary(
-    geom = "point",
-    fun = "mean",
-    size = 3,
-    color = "blue",
-    pch = 18
-  ) +
-  ggplot2::ggtitle("HALLMARK_HEDGEHOG_SIGNALING")
+pathway_jitter_wrapper("HALLMARK_G2M_CHECKPOINT")
 ```
+
+```{r}
+pathway_jitter_wrapper("HALLMARK_HEDGEHOG_SIGNALING")
+```
+
+See how we can get a consistent looking set of plots for different pathways with only a line of code each time?
 
 ## Session Info
 
