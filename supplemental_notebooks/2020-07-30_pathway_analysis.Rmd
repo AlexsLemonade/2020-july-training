@@ -632,22 +632,20 @@ contrast_matrix <- makeContrasts(
 fit2 <- contrasts.fit(fit, contrast_matrix)
 
 # Apply empirical Bayes smoothing
-fit2 <- eBayes(fit)
+fit2 <- eBayes(fit2)
 ```
 
-Let's take a look at the top 10 pathways returned.
-Without specifying a coefficient, `topTable()` will report the F-statistics for testing whether any of the contrasts (treatment in Group 3, treatment in Group 4, and differences in response between the subtypes) are non-zero.
-The null hypothesis is that the pathways do not vary in any way between contrasts.
+We can look at a Venn diagram of significantly differentially expressed pathways for each contrast with the following:
 
 ```{r}
-topTable(fit2, number = 10, adjust = "BH")
+vennDiagram(decideTests(fit2))
 ```
 
 To pull out a specific contrast, we can use the `coef` argument to `topTable()`.
-Here, we're pulling out the difference in treatment effect by group (`(Group_4.digoxin-Group_4.none)-(Group_3.digoxin-Group_3.none)`) with `coef = 3`.
+Here, we're pulling out the difference in treatment effect by group.
 
 ```{r}
-topTable(fit2, coef = 3, number = 10, adjust = "BH")
+topTable(fit2, coef = "group_diff", number = 10, adjust = "BH")
 ```
 
 #### Visualizing individual pathways
@@ -711,20 +709,28 @@ pathway_jitter_wrapper <- function(pathway_name) {
 Let's use this function a few times to look at different pathways! 
 If you're going to do something more than twice, it can be helpful to [write functions](https://swcarpentry.github.io/r-novice-inflammation/02-func-R/) so if you decide to make changes you only have to change one part of your code.
 
+`HALLMARK_TGF_BETA_SIGNALING` has a positive log2 fold change in the table of treatment effect by group.
+
 ```{r}
 pathway_jitter_wrapper("HALLMARK_TGF_BETA_SIGNALING")
 ```
 
-```{r}
-pathway_jitter_wrapper("HALLMARK_INTERFERON_GAMMA_RESPONSE")
-```
+`HALLMARK_MYC_TARGETS_V2` has a negative log2 fold change in the table of treatment effect by group.
 
 ```{r}
-pathway_jitter_wrapper("HALLMARK_G2M_CHECKPOINT")
+pathway_jitter_wrapper("HALLMARK_MYC_TARGETS_V2")
 ```
 
+`HALLMARK_TNFA_SIGNALING_VIA_NFKB` has a positive log2 fold change in the table of treatment effect by group.
+
 ```{r}
-pathway_jitter_wrapper("HALLMARK_HEDGEHOG_SIGNALING")
+pathway_jitter_wrapper("HALLMARK_TNFA_SIGNALING_VIA_NFKB")
+```
+
+`HALLMARK_DNA_REPAIR` has a negative log2 fold change in the table of treatment effect by group.
+
+```{r}
+pathway_jitter_wrapper("HALLMARK_DNA_REPAIR")
 ```
 
 See how we can get a consistent looking set of plots for different pathways with only a line of code each time?
