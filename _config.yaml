@@ -9,8 +9,7 @@ repository_url: https://github.com/AlexsLemonade/2020-july-training
 start_date: 2020-07-27
 end_date: 2020-07-31
 # Specific release in AlexsLemonade/training-modules
-# We use master to make development easier
-release_tag: master
+release_tag: 2020-july
 # The Docker user will almost always be ccdl, which is why this is here
 docker_user: ccdl
 docker_repo: DOCKER-REPOSITORY
