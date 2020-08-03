@@ -23,13 +23,26 @@ RUN install2.r \
     ggpubr \
     colorspace\
     Rtsne \
-    umap
+    umap \
+    uwot \
+    plotly \
+    hexbin \
+    optparse \
+    fastqcr \
+    tweenr \
+    polyclip \
+    ggraph \
+    ggforce \
+    ggupset \
+    msigdbr \
+    FNN
 
 ENV BIOCONDUCTOR_VERSION 3.10
 RUN R -e "BiocManager::install(c('ensembldb', 'DESeq2', 'qvalue',\
     'org.Hs.eg.db', 'org.Dr.eg.db', 'org.Mm.eg.db', 'org.Cf.eg.db',\
     'ComplexHeatmap', 'ConsensusClusterPlus', 'scran', 'scater',\
-    'tximport', 'alevinQC'), \
+    'tximport', 'alevinQC', 'vsn', 'GEOquery', 'AnnotationHub',\
+    'fishpond', 'clusterProfiler', 'GSVA', 'qusage', 'graph'),\
     version = '${BIOCONDUCTOR_VERSION}', update = FALSE)"
 
 # FastQC
@@ -47,6 +60,10 @@ RUN cd fastp && \
 ENV MULTIQC_VERSION 1.8
 RUN apt update && apt install -y python3-pip
 RUN pip3 install multiqc==${MULTIQC_VERSION}
+
+# Snakemake
+ENV SNAKEMAKE_VERSION 5.19.3
+RUN pip3 install snakemake==${SNAKEMAKE_VERSION}
 
 ENV PACKAGES git gcc make g++ libboost-all-dev liblzma-dev libbz2-dev \
     ca-certificates zlib1g-dev curl unzip autoconf
