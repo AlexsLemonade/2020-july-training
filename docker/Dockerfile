@@ -1,5 +1,5 @@
 FROM rocker/tidyverse:3.6.1
-MAINTAINER ccdl@alexslemonade.org
+LABEL maintainer="ccdl@alexslemonade.org"
 WORKDIR /rocker-build/
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
@@ -69,7 +69,7 @@ ENV PACKAGES git gcc make g++ libboost-all-dev liblzma-dev libbz2-dev \
     ca-certificates zlib1g-dev curl unzip autoconf
 
 ENV SALMON_VERSION 1.2.1
-WORKDIR /home
+WORKDIR /usr/local/src
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ${PACKAGES} && \
@@ -78,4 +78,6 @@ RUN apt-get update && \
 RUN wget https://github.com/COMBINE-lab/salmon/releases/download/v${SALMON_VERSION}/salmon-${SALMON_VERSION}_linux_x86_64.tar.gz
 RUN tar xzf salmon-${SALMON_VERSION}_linux_x86_64.tar.gz && \
     rm -f salmon-${SALMON_VERSION}_linux_x86_64.tar.gz && \
-    sudo ln -s /home/salmon-latest_linux_x86_64/bin/salmon /usr/local/bin/salmon
+    ln -s /usr/local/src/salmon-latest_linux_x86_64/bin/salmon /usr/local/bin/salmon
+ 
+WORKDIR /home/rstudio
