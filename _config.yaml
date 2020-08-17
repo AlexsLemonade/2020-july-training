@@ -12,8 +12,8 @@ end_date: 2020-07-31
 release_tag: 2020-july
 # The Docker user will almost always be ccdl, which is why this is here
 docker_user: ccdl
-docker_repo: DOCKER-REPOSITORY
-docker_tag: DOCKER-TAG
+docker_repo: training_rnaseq
+docker_tag: 2020-july
 # These are for loading Docker images from a file; only relevant for in-person
 docker_targz: ccdl_docker_image.tar.gz
 docker_tar: ccdl_docker_image.tar
